@@ -7,8 +7,4 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://github.com/KanghoonYi/datadog-agent-nvml</loc>
-        <changefreq>weekly</changefreq>
-    </url>
 </urlset>
