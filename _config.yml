@@ -1,2 +1,3 @@
+url: "https://kanghoonyi.github.io"
 plugins:
-  - 'jekyll-sitemap'
+  - jekyll-sitemap
