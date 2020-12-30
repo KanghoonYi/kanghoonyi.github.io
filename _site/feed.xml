@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://kanghoonyi.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kanghoonyi.github.io/" rel="alternate" type="text/html" /><updated>2020-12-30T16:15:14+09:00</updated><id>https://kanghoonyi.github.io/feed.xml</id><title type="html">KanghoonYi(pour)’s Github blog</title><subtitle>An amazing website.</subtitle><author><name>KanghoonYi</name></author><entry><title type="html">Datadog Agent Nvml</title><link href="https://kanghoonyi.github.io/datadog-agent-nvml/" rel="alternate" type="text/html" title="Datadog Agent Nvml" /><published>2020-12-30T00:00:00+09:00</published><updated>2020-12-30T00:00:00+09:00</updated><id>https://kanghoonyi.github.io/datadog-agent-nvml</id><content type="html" xml:base="https://kanghoonyi.github.io/datadog-agent-nvml/">&lt;h1 id=&quot;datadog-agent-nvml&quot;&gt;datadog-agent-nvml&lt;/h1&gt;
+&lt;p&gt;for using nvidia graphic metric on datadog
+this project is working with docker.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-nvml&quot;&gt;What is NVML?&lt;/h2&gt;
+&lt;p&gt;Monitoring NVIDIA GPUs status using Datadog.
+see https://github.com/ngi644/datadog_nvml
+see https://developer.nvidia.com/nvidia-management-library-nvml&lt;/p&gt;
+
+&lt;h3 id=&quot;go-to-repository&quot;&gt;go to repository&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/KanghoonYi/datadog-agent-nvml&quot;&gt;https://github.com/KanghoonYi/datadog-agent-nvml&lt;/a&gt;&lt;/p&gt;</content><author><name>KanghoonYi</name></author><summary type="html">datadog-agent-nvml for using nvidia graphic metric on datadog this project is working with docker. What is NVML? Monitoring NVIDIA GPUs status using Datadog. see https://github.com/ngi644/datadog_nvml see https://developer.nvidia.com/nvidia-management-library-nvml</summary></entry></feed>
