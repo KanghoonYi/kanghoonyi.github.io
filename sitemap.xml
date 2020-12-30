@@ -6,6 +6,8 @@
 
         <loc>https://kanghoonyi.github.io</loc>
 
+        <lastmod>2020-12-30</lastmod>
+
         <changefreq>weekly</changefreq>
 
     </url>
@@ -13,6 +15,8 @@
     <url>
 
         <loc>https://github.com/KanghoonYi/datadog-agent-nvml</loc>
+
+        <lastmod>2020-12-30</lastmod>
 
         <changefreq>weekly</changefreq>
 
