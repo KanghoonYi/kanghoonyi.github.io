@@ -91,6 +91,7 @@ GEM
 
 PLATFORMS
   universal-darwin-19
+  universal-darwin-21
 
 DEPENDENCIES
   bundler
