@@ -6,7 +6,7 @@ author:
 date: 2020-12-30 20:55:00 +0900
 categories: [Datadog]
 tags: [Datadog, NVIDIA, NVML]
-pin: true
+pin: false
 ---
 
 # datadog-agent-nvml
