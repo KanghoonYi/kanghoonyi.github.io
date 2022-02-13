@@ -24,18 +24,25 @@ VPN을 이용하는 이유는, 필요할때만, Client의 DNS Resolve를 변경�
 Client에서 접속할 서버를 선택하도록 구성하는 방법은 여러가지가 있겠지만, DNS Resolve과정에서 접속할 서버를 변경한다면, 네트워크에 대해 가장 효율적인 방법일 것입니다.
 
 #### 이를 구현하기 위해 해결해야할 문제는 다음과 같습니다.
-- Private DNS를 통한 domain resolve.  
+- Private DNS를 통한 domain resolve.
 - HTTPS 인증문제
 
 #### VPN설정
 Domain을 다음과 같이 가정합니다.
-> api.abc.com -> Production API 서버
-> api.dev.abc.com -> Dev API 서버
+```
+api.abc.com -> cname -> gateway-id-1.apigateway.com    (Production API 서버)
+api.dev.abc.com -> cname -> gateway-id-2.apigateway.com   (Dev API 서버)
+```
 
 1. VPC생성하기
-2. Route53에서, VPC에 대한 Private Hosted zone생성
-3. Private Hosted Zone에
+2.
+3. Route53에서, VPC에 대한 Private Hosted zone생성
+4. Private Hosted Zone에 아래와 같이 Record를 추가합니다
+  ```
+  api.abc.com -> cname ->
+  ```
 4.
+5.
 
 
 ### AWS SSO(Single Sign-On)를 통해 AWS와 G-Suite(Google)를 연결하고, Google계정으로 VPN연동하기
