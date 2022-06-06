@@ -30,7 +30,7 @@ description: >-                        # used by seo meta and the atom feed
   This is Pour.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://blog.devpour.net'
+url: 'http://blog.devpour.net'
 
 github:
   username: 'KanghoonYi'             # change to your github username
