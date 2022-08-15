@@ -2,7 +2,7 @@
 title: Multi Environments 서버 환경에서, client에서 접속 환경 결정하기(VPN을 이용)
 author:
 name: KanghoonYi(pour)
-date: 2022-08-15 20:55:00 +0900
+date: 2022-08-15 19:55:00 +0900
 categories: [AWS]
 tags: [AWS, Architecture, Region]
 pin: false
@@ -56,15 +56,33 @@ data를 region별로 어떻게 동기화(sync) 할지, 혹은 동기화가 꼭 �
 여기선, `Active-Active`로서 서비스 하기 때문에, 사용자가 많은 region을 선택합니다. 이때, 국가별로 직결되어 있는 [해저케이블](https://www.submarinecablemap.com/)을 고려하면 좋습니다.
 
 #### Routing 전략 선택하기
+여러 region들이 (Infra에서) 동일한 level로서 작동한다면, `routing을 어떻게 할 것인가?`라는 문제에 부딪힙니다.  
+A region과 B region이 있다고 가정합시다.  
+만약, B region으로 가기 위해서, A region으로의 요청이 필요하다면, Multi-region의 의미가 없어집니다. 때문에, 전 세계에 걸쳐 동일하게 사용하는 `Domain`을 사용해 routing합니다.  
+이 Domain을 활용한 방법은, `Domain Resolve`과정에서 접속할 region이 결정되도록 합니다. 이때, 다음과 같은 resolve 규칙을 설정할 수 있습니다
+- [Latency 기반 Routing](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
+  - 요청이 발생한 위치에서, latency가 가장 낮은 target으로 resolve합니다(latency는 route53기준의 값입니다)
+- [Geolocation 기반 routing](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
+  - 지리적 위치에 따라 routing규칙을 정의합니다. 예를 들어, Asia지역에선 한국서버로 연결되도록 설정할 수 있습니다.
+- [Geoproximity routing](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html)
+  - 대륙을 나누는 개념이 아닌, 지리적 근접정도를 기준으로 routing합니다.
 
-
-
+추가로, Cloudfront(CDN)를 이용해, routing하는 방법도 있습니다.  
+[Using latency-based routing with Amazon CloudFront for a multi-Region active-active architecture](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/latency-based-routing-leveraging-amazon-cloudfront-for-a-multi-region-active-active-architecture/)
 
 ### 남은 과제
+Infra가 준비되었다면, CD(Continuous Deployment) 에서의 전략도 바꾸어야 합니다. Application을 배포애야할 target region이 여러개이므로, 다음과 같은 배포전략도 가능합니다.  
+1. 특정 1개의 region에 배포
+2. 장애 확인
+3. 이상 없으면, 나머지도 배포
+4. 배포 완료
+
+이렇게 CD를 수정할 계획입니다
 
 ### Reference
 - [Multi-Region Application Architecture](https://aws.amazon.com/ko/solutions/implementations/multi-region-application-architecture/)
 - [Creating a Multi-Region Application with AWS Services](https://aws.amazon.com/ko/blogs/architecture/creating-a-multi-region-application-with-aws-services-part-1-compute-and-security/)
 - [Disaster Recovery (DR) Architecture on AWS](https://aws.amazon.com/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-iii-pilot-light-and-warm-standby/)
+- [Using latency-based routing with Amazon CloudFront for a multi-Region active-active architecture](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/latency-based-routing-leveraging-amazon-cloudfront-for-a-multi-region-active-active-architecture/)
 - [해저케이블 조회](https://www.submarinecablemap.com/)
 - [AWS re:Invent 2018: Architecture Patterns for Multi-Region Active-Active Applications](https://www.youtube.com/watch?v=2e29I3dA8o4)
