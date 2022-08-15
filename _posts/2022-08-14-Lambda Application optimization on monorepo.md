@@ -22,7 +22,7 @@ Monorepo를 운영하다보면, 각 service에서 공통으로 사용되는 코�
 이때 공통모듈(이하 common모듈)을 참조하는 방식을 Bundling과정에서 최적화(Optimization)할 수 있습니다.  
 
 ### 이게 왜 필요한데?
-lambda를 이용하여 서비스를 운영한다면, lambda의 cold start 문제에 부딪히게 됩니다. 이때 app initializing시간을 최소화하기 위해 이런 최적화가 필요합니다.
+lambda를 이용하여 서비스를 운영한다면, lambda의 cold start 문제에 부딪히게 됩니다. 이때 app initialization시간을 최소화하기 위해 이런 최적화가 필요합니다.
 lambda에 initialize 시간에 영향을 미치는 요소는 다음과 같습니다.([Lambda performance optimization](https://aws.amazon.com/ko/blogs/compute/operating-lambda-performance-optimization-part-2/))
 ```text
 The size of the function package, in terms of imported libraries and dependencies, and Lambda layers.
