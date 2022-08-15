@@ -53,7 +53,7 @@ typescript는 특정 path를 alias로 지정할 수 있습니다.([tsconfig path
 ```json
 {
   "compilerOptions": {
-    "baseUrl": ".", // this must be specified if "paths" is specified.
+    "baseUrl": ".",
     "paths": {
       "@common": "../common"
     }
