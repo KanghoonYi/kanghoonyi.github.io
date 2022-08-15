@@ -31,10 +31,17 @@ lambda를 통해 Application을 서비스하고 있다면, Multi-region에 대�
 
 
 ### Multi-region 세팅하기
-1. 사용할 Multi-region Architecture 선택하기
+#### 사용할 Multi-region Architecture 선택하기
+   1. [Pilot light](https://aws.amazon.com/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-iii-pilot-light-and-warm-standby/)
+      예비용 region을 구축하지만, active상태로 두진 않습니다. 장애가 발생하면, active상태로 들어가기 위한 warm-up이 필요합니다
+   2. [Warm Standby](https://aws.amazon.com/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-iii-pilot-light-and-warm-standby/)
+      `Pilot light`와 유사하지만, 예비용 region을 warm상태로 둡니다. 예비 region으로 traffic을 routing하진 않습니다.
+   3. [Active-Active](https://aws.amazon.com/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-iv-multi-site-active-active/)
+      여러개의 region을 active상태로 두고, 특정 조건에 따라 traffic을 처리합니다.(주로, 요청이 발생한 지리적 위치에 따라 routing합니다)
 
-2. 서비스할 Region 선택하기
-3. region별 Routing 전략 선택하기
+#### 서비스할 Region 선택하기
+   1.
+#### region별 Routing 전략 선택하기
 4.
 
 
@@ -44,5 +51,6 @@ lambda를 통해 Application을 서비스하고 있다면, Multi-region에 대�
 ### Reference
 - [Multi-Region Application Architecture](https://aws.amazon.com/ko/solutions/implementations/multi-region-application-architecture/)
 - [Creating a Multi-Region Application with AWS Services](https://aws.amazon.com/ko/blogs/architecture/creating-a-multi-region-application-with-aws-services-part-1-compute-and-security/)
+- [Disaster Recovery (DR) Architecture on AWS](https://aws.amazon.com/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-iii-pilot-light-and-warm-standby/)
 - [해저케이블 조회](https://www.submarinecablemap.com/)
 - [AWS re:Invent 2018: Architecture Patterns for Multi-Region Active-Active Applications](https://www.youtube.com/watch?v=2e29I3dA8o4)
