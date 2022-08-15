@@ -61,13 +61,17 @@ typescript는 특정 path를 alias로 지정할 수 있습니다.([tsconfig path
 }
 ```
 
-#### webpack
+#### webpack bundling
 common 모듈을 webpack에서 번들링 및 최적화할 수 있도록 설정합니다.  
 nodejs를 사용하는 경우, 외부 모듈을 따로 번들링하지 않습니다. 이는, `webpack-node-externals`이라는 모듈을 이용해 세팅합니다.  
 그러나, common모듈은 typescript의 path alias 기능을 사용한 것이기 때문에, 별도의 bundling과정을 거치도록, `webpack-node-externals`설정에서 allowlist에 포함시켜 줍니다.
 이렇게 설정하면, `@common/~`경로로 import한 모든 구문이 bundling대상이 되며, 구동에 필요한 모든 모듈을 가져와 packaging합니다.
-```javascript
-module.exports = {
+```typescript
+// webpack.config.ts
+import nodeExternals from 'webpack-node-externals';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+
+export default {
 	...,
   module: {
     rules: [
