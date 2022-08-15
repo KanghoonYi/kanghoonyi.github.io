@@ -21,7 +21,8 @@ Multi-region은 여러가지 목적으로 쓰이며, 주로 아래와 같은 상
 
 ### Multi-region을 선택하기 전에 고려해야할 사항
 #### Multi-region이 꼭 필요한가?
-대부분의 서비스에선, Cloudfront와 같은 CDN를 통해 Global service로서 운영이 가능합니다. region을 여러가지 운영한다는 것은, region간 보안 및 네트워크 연결문제에 대한 고도화가 필요해진다는 얘기입니다.
+대부분의 서비스에선, Cloudfront와 같은 CDN를 통해 Global service로서 운영이 가능합니다. region을 여러가지 운영한다는 것은, region간 보안 및 네트워크 연결문제에 대한 고도화가 필요해진다는 얘기입니다.  
+즉, multi-region을 운영한다는 것은 관리해야한 것들이 늘어난다는 얘기입니다.
 
 #### 비용(pricing)
 서비스 운용비용(pricing) 또한 고려해야할 대상입니다. 여러 region에 걸쳐 서비스를 운영하면, Cloud서비스의 private네트워크가 아닌, public네트워크를 써야하는 경우도 생깁니다.
