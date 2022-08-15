@@ -1,5 +1,5 @@
 ---
-title: Multi Environments 서버 환경에서, client에서 접속 환경 결정하기(VPN을 이용)
+title: Multi-region Architecture 구성하기
 author:
 name: KanghoonYi(pour)
 date: 2022-08-15 19:55:00 +0900
