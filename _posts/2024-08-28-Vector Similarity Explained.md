@@ -1,9 +1,9 @@
 ---
 title: Vector Similarity Explained(Vector의 유사도를 측정하는 방법에 관하여)
-author:
+author: KanghoonYi(pour)
 name: KanghoonYi(pour)
-date: 2024-08-28 19:00:00 +0900
-categories: [MachineLearningBootcamp]
+date: 2024-08-27 19:00:00 +0900
+categories: [ML, MachineLearningBootcamp]
 tags: [ML, Vector, NLP, ComputerVision, Similarity]
 pin: false
 ---
