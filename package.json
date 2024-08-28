@@ -14,14 +14,6 @@
   },
   "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy/",
   "scripts": {
-    "build": "concurrently npm:build:*",
-    "build:css": "purgecss -c purgecss.config.js",
-    "build:js": "rollup -c --bundleConfigAsCjs --environment BUILD:production",
-    "watch:js": "rollup -c --bundleConfigAsCjs -w",
-    "lint:scss": "stylelint _sass/**/*.scss",
-    "lint:fix:scss": "npm run lint:scss -- --fix",
-    "test": "npm run lint:scss",
-    "prepare": "husky"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -31,8 +23,6 @@
     "@babel/core": "^7.25.2",
     "@babel/plugin-transform-class-properties": "^7.25.4",
     "@babel/preset-env": "^7.25.4",
-    "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -42,7 +32,6 @@
     "@semantic-release/git": "^10.0.1",
     "concurrently": "^8.2.2",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "husky": "^9.1.5",
     "purgecss": "^6.0.0",
     "rollup": "^4.21.0",
     "semantic-release": "^24.1.0",
@@ -57,17 +46,6 @@
     "> 0.2%",
     "not dead"
   ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-line-length": [
-        0,
-        "always"
-      ]
-    }
-  },
   "stylelint": {
     "extends": "stylelint-config-standard-scss",
     "rules": {
