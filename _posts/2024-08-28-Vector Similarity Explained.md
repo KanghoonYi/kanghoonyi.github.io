@@ -6,6 +6,7 @@ date: 2024-08-27 19:00:00 +0900
 categories: [ML, MachineLearningBootcamp]
 tags: [ML, Vector, NLP, ComputerVision, Similarity]
 pin: false
+math: true
 ---
 
 ## 목적
@@ -20,7 +21,9 @@ pin: false
 
 기존에 알고 있던, 유클리드 좌표기반의 ‘두점사이의 거리’를 구하는것과 같습니다.  
 
-$$d(a,b)= \sqrt{(a_1​−b_1​)^2+(a_2​−b_2​)^2+...+(a_n​−b_n​)^2​}$$
+$$
+d(a,b)= \sqrt{(a_1​−b_1​)^2+(a_2​−b_2​)^2+...+(a_n​−b_n​)^2​}
+$$
 
 이렇게 \\(a_1,b_1\\)부터 \\(a_n,b_n\\)까지의 모든 component(vector의 property)들을 계산해야합니다.
 
@@ -29,9 +32,9 @@ $$d(a,b)= \sqrt{(a_1​−b_1​)^2+(a_2​−b_2​)^2+...+(a_n​−b_n​)^2�
 즉, 크기가 큰 vector들의 ‘euclidean distance’의 값이 작은 vector들의 값보다 큽니다. 2개의 vector가 유사하게 보여도, ‘euclidean distance’에선 차이를 보입니다.
 ‘Euclidean distance’는 문자 그대로, vector사이의 거리를 구하는 것이기 때문에, 매우 직관적인 metric입니다.  
 
-```text
-💡 이 ‘Euclidean distance’가 작다면, 실제로 두 vector의 거리가 아주 가깝다는것을 의미합니다. 이는 밑에 기술할, ‘Dot product’와 ‘Consine’ 일반적인(generally) 사실(true)이 아닙니다.
-```
+
+>이 ‘Euclidean distance’가 작다면, 실제로 두 vector의 거리가 아주 가깝다는것을 의미합니다. 이는 밑에 기술할, ‘Dot product’와 ‘Consine’ 일반적인(generally) 사실(true)이 아닙니다.
+{: .prompt-tip }
 
 ### ML에서의 평가
 
@@ -45,11 +48,12 @@ DLM(deep learning model)에서는 자주 쓰지 않습니다.
 
 ## **Dot product Similarity(vector 내적)**
 vector의 dot product를 metric으로 사용하는 방법입니다.  
-‘dot product’를 계산하는 방법은 아래와 같이 2가지 방법이 있습니다. 여기선, 2번째 방법인, vector의 크기와 cosine을 이용한 방법을 사용합니다.
-$$
-a⋅b=\sum_{\substack{i=1}}^n{a_{i}b_{i}}=a_{1}b_{1}+a_{2}b_{2}+…+a_{n}b_{n}
-$$
+‘dot product’를 계산하는 방법은 아래와 같이 2가지 방법이 있습니다. 여기선, 2번째 방법인, vector의 크기와 cosine을 이용한 방법을 사용합니다.    
 
+$$
+a⋅b=\sum_{\substack{i=1}}^n{a_{i}b_{i}}=a_{1}b_{1}+a_{2}b_{2}+…+a_{n}b_{n}  
+$$
+  
 $$
 a⋅b=∣a∣∣b∣\cos{\alpha}
 $$
@@ -57,18 +61,17 @@ $$
 ![image.png](/assets/img/for-post/Vector Similarity Explained/image 1.png)
 
 ‘Dot product’의 결과 값은 scalar값입니다(vector가 아닙니다).  
-    $$\alpha$$가 90도 미만이면 +(positive) 값을 갖고,    
-    90도보다 크다면, -(negative) 값을 갖고,  
-    90도(수직, orthogonal)이면, 0이 됩니다.  
+: \\(\alpha\\)가 90도 미만이면 +(positive) 값을 갖고,    
+: 90도보다 크다면, -(negative) 값을 갖고,  
+: 90도(수직, orthogonal)이면, 0이 됩니다.  
 
-```text
-💡 이는 \\(\cos{\alpha}\\)에 따라 값이 바뀌는것을 말합니다.
-```
+>이는 \\(\cos{\alpha}\\)에 따라 값이 바뀌는것을 말합니다.
+{: .prompt-tip }
 
 ‘Dot product’는 두 vector의 크기(length)와 방향(direction)모두에게 영향을 받습니다.  
-만약, 2개의 vector가 크기는 갖고,  
-    방향이 반대(opposite)인 것보다,   
-    방향이 동일한것이 더 큽니다.  
+만약, 2개의 vector가 크기는 갖고,
+: 방향이 반대(opposite)인 것보다,   
+: 방향이 동일한것이 더 큽니다.  
 
 ### ML에서의 평가
 
@@ -80,15 +83,16 @@ LLMs(Large Language models)와 같은 곳에서 자주 보게 됩니다.
 ## **Cosine Similarity**
 
 ‘Cosine Similarity’는 2개의 vector사이의 각도(angle)을 metric으로 사용하는 방법입니다.  
-이 ‘Cosine Similarity’는 vector의 크기에 영향을 받지않고, 오직 각도(angle) 혹은 방향(direction)에만 영향을 받습니다.  
+이 ‘Cosine Similarity’는 vector의 크기에 영향을 받지않고, 오직 각도(angle) 혹은 방향(direction)에만 영향을 받습니다.    
+
 $$
 \text{sim}(a,b)=\frac{a\cdot{b}}{\|a\|\cdot{\|b\|}}
 $$
 
 ‘Cosine Similarity’는 -1에서 1사이의 값을 갖는다.  
-    1은 $\alpha$가 0이라는 뜻이고,  
-    0은 수직(orthogonal)  
-    -1은 2개의 vector가 완전히 반대방향이라는 뜻입니다.  
+: 1은 $\alpha$가 0이라는 뜻이고,  
+: 0은 수직(orthogonal)  
+: -1은 2개의 vector가 완전히 반대방향이라는 뜻입니다.  
 
 ![image.png](/assets/img/for-post/Vector Similarity Explained/image 2.png)
 
