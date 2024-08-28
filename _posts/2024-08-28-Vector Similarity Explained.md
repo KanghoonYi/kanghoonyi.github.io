@@ -20,9 +20,9 @@ pin: false
 
 기존에 알고 있던, 유클리드 좌표기반의 ‘두점사이의 거리’를 구하는것과 같습니다.  
 
-$d(a,b)= \sqrt{(a_1​−b_1​)^2+(a_2​−b_2​)^2+...+(a_n​−b_n​)^2​}$
+$$d(a,b)= \sqrt{(a_1​−b_1​)^2+(a_2​−b_2​)^2+...+(a_n​−b_n​)^2​}$$
 
-이렇게 $a_1,b_1$부터 $a_n,b_n$까지의 모든 component(vector의 property)들을 계산해야합니다.
+이렇게 \\(a_1,b_1\\)부터 \\(a_n,b_n\\)까지의 모든 component(vector의 property)들을 계산해야합니다.
 
 ### sensitive to scale
 이 ‘Euclidean distance’는 vector의 크기(절대값)에 영향을 많이 받습니다.
@@ -62,7 +62,7 @@ $$
     90도(수직, orthogonal)이면, 0이 됩니다.  
 
 ```text
-💡 이는 $\cos{\alpha}$에 따라 값이 바뀌는것을 말합니다.
+💡 이는 \\(\cos{\alpha}\\)에 따라 값이 바뀌는것을 말합니다.
 ```
 
 ‘Dot product’는 두 vector의 크기(length)와 방향(direction)모두에게 영향을 받습니다.  
