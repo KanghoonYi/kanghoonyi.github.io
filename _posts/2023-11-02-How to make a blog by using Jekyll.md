@@ -110,3 +110,9 @@ Jekyll을 사용하여 Github Pages 사이트 설정
 
 Jekyll 설치 방법  
 : https://jekyllrb-ko.github.io/docs/
+
+Jekyll에서 Post 작성방법
+: https://jekyllrb-ko.github.io/docs/posts/
+
+jekyll-theme-chirpy 테마의 Post작성에 필요한 추가 spec
+: https://chirpy.cotes.page/posts/write-a-new-post/
