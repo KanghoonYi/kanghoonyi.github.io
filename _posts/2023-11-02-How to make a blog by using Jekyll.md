@@ -63,7 +63,7 @@ $ xcode-select --install
 ```shell
 $ gem install --user-install bundler jekyll
 ```
-2. 이제 shell(Command line)환경에서 gem package에서 제공하는 명령어를 찾을 수 있도록 연결해줍니다.
+2. 이제 shell(Command line)환경에서 gem package에서 제공하는 명령어(여기서는 `bundler`를 사용하기 위함입니다.)를 찾을 수 있도록 연결해줍니다.
 ```shell
 $ echo 'export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"' >> ~/.bash_profile
 ```
