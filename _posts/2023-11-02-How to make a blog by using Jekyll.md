@@ -63,7 +63,7 @@ $ xcode-select --install
 ```shell
 $ gem install --user-install bundler jekyll
 ```
-2. 이제 shell(Command line)환경에서 gem package에서 제공하는 명령어를 찾을 수 있도록 연결해줍니다.
+2. 이제 shell(Command line)환경에서 gem package에서 제공하는 명령어(여기서는 `bundler`를 사용하기 위함입니다.)를 찾을 수 있도록 연결해줍니다.
 ```shell
 $ echo 'export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"' >> ~/.bash_profile
 ```
@@ -106,13 +106,13 @@ $ bundle exec jekyll s
 ## Reference
 
 Jekyll을 사용하여 Github Pages 사이트 설정
-: https://docs.github.com/ko/pages/setting-up-a-github-pages-site-with-jekyll  
+: [https://docs.github.com/ko/pages/setting-up-a-github-pages-site-with-jekyll](https://docs.github.com/ko/pages/setting-up-a-github-pages-site-with-jekyll)  
 
 Jekyll 설치 방법  
-: https://jekyllrb-ko.github.io/docs/
+: [https://jekyllrb-ko.github.io/docs/](https://jekyllrb-ko.github.io/docs/)
 
 Jekyll에서 Post 작성방법
-: https://jekyllrb-ko.github.io/docs/posts/
+: [https://jekyllrb-ko.github.io/docs/posts/](https://jekyllrb-ko.github.io/docs/posts/)
 
 jekyll-theme-chirpy 테마의 Post작성에 필요한 추가 spec
-: https://chirpy.cotes.page/posts/write-a-new-post/
+: [https://chirpy.cotes.page/posts/write-a-new-post/](https://chirpy.cotes.page/posts/write-a-new-post/)
