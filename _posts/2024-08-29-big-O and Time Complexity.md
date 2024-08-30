@@ -22,8 +22,8 @@ big-O 시간은 알고리즘의 효율성을 나타내는 지표(metric) 혹은 
 ## 시간복잡도(time complexity)
 
 ![big-O표기법에 따른 그래프](/assets/img/for-post/big-O and Time Complexity/image.png)
+_big-O표기법에 따른 그래프_
 
-big-O표기법에 따른 그래프  
 위의 그래프처럼 다양한 big-O표기가 있습니다.  
 O(1)(상수의 시간복잡도)가 얼마냐에 따라, 특정 input범위에선, O(1)의 시간복잡도가 더 클 수 있습니다.  
 ### big-O, big-θ, big-Ω
@@ -116,9 +116,7 @@ big-O는 단순히 증가하는 비율을 나타냅니다. 특정 input데이터
 
 ![big-O의 N크기에 따른 연산차이를 표현한 graph. 그 성능에 따라 horrible~excellent까지 추가로 표기되어 있습니다.
 출처: [https://www.bigocheatsheet.com/](https://www.bigocheatsheet.com/)](/assets/img/for-post/big-O and Time Complexity/image%201.png)
-
-big-O의 N크기에 따른 연산차이를 표현한 graph. 그 성능에 따라 horrible~excellent까지 추가로 표기되어 있습니다.
-출처: [https://www.bigocheatsheet.com/](https://www.bigocheatsheet.com/)
+_big-O의 N크기에 따른 연산차이를 표현한 graph. 그 성능에 따라 horrible~excellent까지 추가로 표기되어 있습니다. 출처: [https://www.bigocheatsheet.com/](https://www.bigocheatsheet.com/)_
 
 ### 여러 단계로 이루어진 알고리즘은 어떻게 표현할까?
 
@@ -194,9 +192,8 @@ $$
 
 ![binary search tree 예시
 출처: [https://en.wikipedia.org/wiki/Binary_search](https://en.wikipedia.org/wiki/Binary_search)](/assets/img/for-post/big-O and Time Complexity/image%202.png)
+_binary search tree 예시 출처: [https://en.wikipedia.org/wiki/Binary_search](https://en.wikipedia.org/wiki/Binary_search)_
 
-binary search tree 예시
-출처: [https://en.wikipedia.org/wiki/Binary_search](https://en.wikipedia.org/wiki/Binary_search)  
 ‘Binary Search Tree(BST)’는 특정 element를 찾을때, 그 탐색 대상을 절반($\frac{1}{2}$)씩 줄여나갑니다.  
 예를 들어, 탐색 대상(N)이 총 16개인 경우($N = 16$),
 
