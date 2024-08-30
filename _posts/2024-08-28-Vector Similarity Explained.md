@@ -110,11 +110,11 @@ $$
 
 Model이 train할때 사용한 ‘Similarity’ metric과 동일한 metric을 사용하는것이 중요합니다.  
 만약, model에서 사용된 metric을 모른다면, 여러 metric중에 적당한걸 찾기위해 여러 실험을 거칠필요가 있습니다.  
-### Reference
+## Reference
 
 [Vector Similarity Explained](https://www.pinecone.io/learn/vector-similarity/)
 
 [Different types of Distances used in Machine Learning](https://medium.com/@shubhobrata.das.fiem.cse17/different-types-of-distances-used-in-machine-learning-45b18a2282d8)
 
-### 이미지 자료 출처
+## 이미지 자료 출처
 [Vector Similarity Explained](https://www.pinecone.io/learn/vector-similarity/)
