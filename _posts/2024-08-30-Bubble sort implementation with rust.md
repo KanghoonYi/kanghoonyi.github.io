@@ -29,6 +29,8 @@ math: true
 $$
 O(1)
 $$
+'bubble sort'는 array(메모리에서의 연속된 공간을 의미)에서 2개의 값을 교환(swap)하기 때문에,  
+target이 되는 array이외의 추가로 공간이 필요하지 않습니다
 
 ## Implementation
 
