@@ -11,6 +11,7 @@ math: true
 'merge sort'는 'Divide and conquer(분할과 정복)'을 사용한 대표적인 알고리즘입니다.
 이 'Divide and conquer'는 문제를 작게 쪼개서 해결하고, 이를 다시 합침으로서 문제를 해결해 나가는걸 말합니다.
 > 'Divide and conquer'는 여러 문제해결의 기본이 되곤 하며, 앞으로 부딪히는 문제가 너무 크게 느껴진다면, 이 전략으로 접근하면 도움이 됩니다.
+{: .prompt-tip }
 
 'merge sort'에서는 총 2단계로 알고리즘의 단계를 구분합니다.
 1. 분할(divide) 단계
@@ -22,9 +23,11 @@ math: true
 ## Time complexity and space complexity
 
 ### Time complexity(시간복잡도)
-| Best case | Average  | Worst case |
+
+| Best case | Average | Worst case |
 |-----------|----------|------------|
-| $O(n\log{n})$  | $O(n\log{n})$ | $O(n\log{n})$   |
+|$O(n\log{n})$|$O(n\log{n})$|$O(n\log{n})$|
+
 
 어떤 상황이든 $O(n\log{n})$으로 안정적인 성능을 보여줍니다.  
 여기서 n은 정렬 대상이 되는 array 전체를 1회 탐색해야하는것을 의미합니다.
