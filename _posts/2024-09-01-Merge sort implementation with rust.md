@@ -12,6 +12,13 @@ math: true
 이 'Divide and conquer'는 문제를 작게 쪼개서 해결하고, 이를 다시 합침으로서 문제를 해결해 나가는걸 말합니다.
 > 'Divide and conquer'는 여러 문제해결의 기본이 되곤 하며, 앞으로 부딪히는 문제가 너무 크게 느껴진다면, 이 전략으로 접근하면 도움이 됩니다.
 
+'merge sort'에서는 총 2단계로 알고리즘의 단계를 구분합니다.
+1. 분할(divide) 단계
+: array를 반으로 나눕니다.
+
+2. 정복(conquer) 단계(merge 단계)
+: 나뉘어진 2개의 array를 하나로 합칩니다. 이때, 정렬이 이루어집니다.(2개의 array를 각각 보면서 크기를 비교하여 합칩니다)
+
 ## Time complexity and space complexity
 
 ### Time complexity(시간복잡도)
@@ -20,8 +27,15 @@ math: true
 | $O(n\log{n})$  | $O(n\log{n})$ | $O(n\log{n})$   |
 
 어떤 상황이든 $O(n\log{n})$으로 안정적인 성능을 보여줍니다.  
-여기서 n은 정렬 대상이 되는 array 전체를 1회 탐색해야하는것을 의미합니다.  
-이 n개의 array의 요소(element) 각각을 정렬할때 쓰는 비용이 $\log{n}$이 됩니다.
+여기서 n은 정렬 대상이 되는 array 전체를 1회 탐색해야하는것을 의미합니다.
+
+알고리즘의 단계로 보면,
+
+1. 분할(divide) 단계
+: $O(\log{n})$, array를 반으로 줄여나가면서 함수의 실행횟수가 $O(\log{n})$이 됩니다.
+
+2. 정복(conquer) 단계
+: $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다.
 
 ### Space Complexity(공간복잡도)
 
