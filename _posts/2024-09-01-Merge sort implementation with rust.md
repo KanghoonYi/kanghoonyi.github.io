@@ -118,7 +118,7 @@ fn main() {
 }
 ```
 
-평가
+#### 평가
 알고리즘은 잘 작동하지만,chatGPT로부터 아래와 같은 feedback을 받았습니다.
 
 - 불필요한 메모리 사용 제거할것
@@ -126,8 +126,94 @@ fn main() {
 
 - `deref_mut`사용하지 말것.
 : 'Vec'의 Slice 기능을 사용할것.
+: 'deref'는 역참조(dereference, pointer가 가리키는 메모리에 접근하여 데이터를 가져오는것.) 값을 반환하는 method로서, 여기선 array의 주소를 function에 argument로 전달하기 위한 맥락으로 사용하였습니다.
+: 이 'deref'를 명시적(explicit)으로 사용하는것은 rust에서 anti-pattern으로 여겨집니다. 메모리의 값을 읽는 것은 암시적으로 이루어져야 하는데, 명시적으로 하게되면 코드의 간결함이 떨어지게 됩니다. 이는 코드의 가독성과 안정성을 떨어트리는 요인이 됩니다. 
 
 ### 두번째 시도
 ```rust
+use rand::Rng;
 
+
+fn generate_rand_array(size: usize) -> Vec<u32> {
+    let mut rng = rand::thread_rng();
+    let mut rand_arr= Vec::with_capacity(size);
+    for _ in 0..size {
+        rand_arr.push(rng.gen_range(1..100));
+    }
+    return rand_arr
+}
+
+fn merge_sort(mut arr: Vec<u32>) -> Vec<u32> {
+
+    merge_sort_partition(&mut arr);
+    return arr;
+}
+
+fn merge_sort_partition(arr: &mut [u32]) -> &mut [u32] {
+    if arr.len() <= 1 {
+        return arr;
+    }
+    let mid = ((arr.len() / 2) as f64).floor() as usize;
+
+    // divide
+    merge_sort_partition(&mut arr[..mid]);
+    merge_sort_partition(&mut arr[mid..]);
+
+    let mut merged_arr = arr.to_vec(); // rust의 borrow정책때문에 필요.
+  
+    // merge
+    merge(&arr[..mid], &arr[mid..], &mut merged_arr);
+
+    arr.copy_from_slice(&merged_arr);
+    return arr
+}
+
+fn merge(arr1: & [u32], arr2: & [u32], result_arr: &mut [u32]) {
+    let mut left_idx = 0;
+    let mut right_idx = 0;
+    for idx in 0..result_arr.len() {
+        let value;
+        let left_val = if left_idx < arr1.len() {arr1[left_idx % arr1.len()]} else { u32::MAX };
+        let right_val = if right_idx < arr2.len() { arr2[right_idx % arr2.len()] } else { u32::MAX };
+        if left_val < right_val {
+            value = left_val;
+            left_idx += 1;
+        } else {
+            value = right_val;
+            right_idx += 1;
+        }
+
+        result_arr[idx] = value;
+    }
+}
+
+
+fn main() {
+    // random value로 이루어진 array 생성
+    let arr = generate_rand_array(10);
+    println!("{:?}", arr);
+
+    let sorted_arr = merge_sort(arr);
+    println!("{:?}", sorted_arr);
+
+}
 ```
+
+'merge'단계를 별도의 function으로 분리하였습니다.  
+이 과정에서 rust의 'second mutable borrow occurs here'에러가 발생하였습니다.
+
+#### 'second mutable borrow occurs here'
+rust에서는 [References and Borrowing](https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html)라는 변수 및 메모리 참조 정책을 사용합니다.  
+`borrow checker`를 통해 compile단계에서의 메모리 참조 위험을 감지하고 알려줍니다.
+위 코드에서 `merge_sort_partition(&mut arr);`의 `&mut arr`은 변수 arr에 대한 수정 권한을 function에 넘겨주는것과 같습니다.  
+이를 받는 function에선 해당 권한을 1회만 사용할 수 있습니다.  
+때문에, 'second mutable borrow occurs here' error는 이를 2회 이상 사용하려 했다는 내용입니다.
+
+이를 해소하기 위해,
+: arr을 별도의 메모리로 copy(여기선 새로운 Vec를 생성했습니다)하고,
+: 함수 마지막에 원본 arr에 정렬된 최종 데이터를 copy함으로써 이 정책을 우회했습니다.
+
+
+## Reference
+Rust 'References and Borrowing'
+: https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html
