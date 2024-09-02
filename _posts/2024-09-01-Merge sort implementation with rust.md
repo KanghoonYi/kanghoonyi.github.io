@@ -38,9 +38,20 @@ math: true
 : $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다.
 
 ### Space Complexity(공간복잡도)
+$$
+O(n)
+$$
+
+array를 분할하는 과정에서 추가 공간이 필요합니다.
+
+#### Merge sort with $O(1)$ space complexity
+array의 element가 '양의 정수(unsigned integers)'일때, 수학적 trick을 이용해서 $O(1)$의 알고리즘을 만들 수 있다고 합니다.
+[https://www.geeksforgeeks.org/merge-sort-with-o1-extra-space-merge-and-on-lg-n-time/](https://www.geeksforgeeks.org/merge-sort-with-o1-extra-space-merge-and-on-lg-n-time/)
 
 
 ## Implementation
+
+### 첫번째 시도
 ```rust
 use std::ops::DerefMut;
 use rand::Rng;
@@ -105,4 +116,18 @@ fn main() {
     println!("{:?}", sorted_arr);
   // [4, 6, 10, 27, 47, 54, 69, 87, 93, 94] 출력
 }
+```
+
+평가
+알고리즘은 잘 작동하지만,chatGPT로부터 아래와 같은 feedback을 받았습니다.
+
+- 불필요한 메모리 사용 제거할것
+: `left_arr.to_vec()` 이 부분이 기존 Vec의 slice에 대한 pointer를 기준으로 새로운 Vec를 생성함으로써, 불필요하게 저장공간을 사용하고 있다.
+
+- `deref_mut`사용하지 말것.
+: 'Vec'의 Slice 기능을 사용할것.
+
+### 두번째 시도
+```rust
+
 ```
