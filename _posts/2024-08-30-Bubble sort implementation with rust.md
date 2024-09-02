@@ -10,18 +10,27 @@ math: true
 ---
 'bubble sort'는 가장 기본적인 sort algorithm(정렬 알고리즘)입니다.
 
+## Time complexity and space complexity
+### Time complexity(시간복잡도)
 시간 복잡도는 다음과 같습니다
 
 |  | Best case | Average | Worst case |
-| --- | --- | --- | --- |
-| comparisions(비교연산 횟수) | O(n^2) | O(n^2) | O(n^2) |
-| swaps(교환연산 횟수) | O(n^2) | O(n^2) | O(n^2) |
-
+| --- |--------| --- | --- |
+| comparisions(비교연산 횟수) | $O(n^2)$ | $O(n^2)$ | $O(n^2)$ |
+| swaps(교환연산 횟수) | $O(1)$ | $O(n^2)$ | $O(n^2)$ |
+ 
 > 구현하는 방법에 따라, Best case의 시간복잡도를 $O(n)$(comparision 횟수)와 $O(1)$(swap 횟수)로 만들 수 있습니다
 {: .prompt-info }
 
 > ‘Best case‘는 array가 이미 정렬되어 있는 경우를 말합니다.
 {: .prompt-info }
+
+### Space complexity(공간복잡도)
+$$
+O(1)
+$$
+'bubble sort'는 array(메모리에서의 연속된 공간을 의미)에서 2개의 값을 교환(swap)하기 때문에,  
+target이 되는 array이외의 추가로 공간이 필요하지 않습니다
 
 ## Implementation
 
