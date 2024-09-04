@@ -219,4 +219,4 @@ rust에서는 [References and Borrowing](https://doc.rust-lang.org/1.8.0/book/re
 
 ## Reference
 Rust 'References and Borrowing'
-: https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html
+: [https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html](https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html)
