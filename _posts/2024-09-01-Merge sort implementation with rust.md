@@ -34,8 +34,11 @@ math: true
 
 알고리즘의 단계로 보면,
 
+![img.png](/assets/img/for-post/Merge sort implementation with rust/img.png)
+_Merge sort analysis with Tree. 출처: [https://mathcenter.oxford.emory.edu/site/cs171/mergeSortAnalysis/](https://mathcenter.oxford.emory.edu/site/cs171/mergeSortAnalysis/)_
+
 1. 분할(divide) 단계
-: $O(\log{n})$, array를 반으로 줄여나가면서 함수의 실행횟수가 $O(\log{n})$이 됩니다.
+: $O(\log{n})$, array를 반으로 줄여나가면서 함수의 실행횟수가 $O(\log{n})$이 됩니다. 위 tree 이미지에서 tree depth가 이에 해당합니다.
 
 2. 정복(conquer) 단계
 : $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다.
