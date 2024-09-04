@@ -1,3 +1,14 @@
+---
+title: V8 engine build and check machine code(V8 engine을 build하고 machine code 확인하기)
+author: KanghoonYi(pour)
+name: KanghoonYi(pour)
+date: 2024-07-05 14:10:02 +0900
+categories: [Typescript, Javascript]
+tags: [javascript, machine code, cpu, nodejs, v8]
+pin: false
+math: false
+---
+
 Google의 V8엔진을 통해, javascript는 새로운 기회를 얻었습니다.  
 다른 script언어들과 다르게, javascript코드를 compile하여 machine code로 cache함으로써 성능을 극한으로 끌어 올렸습니다.  
 문득, V8이 생성하는 ‘Machine code’라는게 궁금해졌습니다.  
@@ -19,7 +30,7 @@ V8은 C++ API를 지원합니다. 때문에, 이 C++ API에서 machine code를 �
 
 ### 첫번째 시도
 
-rust에서 v8 crate(package)가 있어서, 이를 통해 complie결과물을 출력하고자 하였습니다.
+rust에서 v8 crate(package)가 있어서, 이를 통해 complie결과물을 출력하고자 하였습니다.  
 [v8 - Rust](https://docs.rs/v8/latest/v8/)
 
 ```rust
