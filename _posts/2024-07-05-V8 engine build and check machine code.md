@@ -53,7 +53,7 @@ let result = result.to_string(scope).unwrap();
 println!("result: {}", result.to_rust_string_lossy(scope));
 ```
 
-여기서 copile결과물에 해당하는 ‘script’변수에 ‘machine code를 확인할 수 있는 method가 있지 않을까?’라고 생각했습니다.  
+여기서 compile결과물에 해당하는 ‘script’변수에 ‘machine code를 확인할 수 있는 method가 있지 않을까?’라고 생각했습니다.  
 기대하는 method는 없었습니다.
 
 ### 두번째 시도
@@ -92,7 +92,7 @@ v8을 debug모드로 build하면, stdout(여기선 console)을 통해, ‘machin
         3. 이제 shell을 이용해서 어느 경로에 있든 ‘depot_tools’에 있는 기능들을 사용할 수 있습니다.
     2. v8 source code를 fetch합니다.
 
-       > ‘fetch’는 a에서 추가한 ‘depot_tools’에 포함된 기능입니다.
+       > ‘fetch’는 ‘depot_tools’에 포함된 기능입니다.
         {: .prompt-info }
 
        > 이 과정에서 web browser에서 구글 인증을 요구할 수 있습니다. shell에 뜬 url에 접속하여 인증을 완료하면 됩니다.
@@ -182,7 +182,7 @@ v8을 debug모드로 build하면, stdout(여기선 console)을 통해, ‘machin
 
 ## 출력 결과
 
-두번째 시도의 2-e를 실행하고 나면, 아래와 같은 출력이 console에 나타납니다.
+두번째 시도의 최종 shell command를 실행하고 나면, 아래와 같은 출력이 console에 나타납니다.
 
 - Raw source
 
