@@ -44,7 +44,7 @@ _Merge sort analysis with Tree. 출처: [https://mathcenter.oxford.emory.edu/sit
 : $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다
 
 #### 왜 $O(2^{n})$이 아닐까?
-이전 [post](https://blog.devpour.net/posts/big-O-and-Time-Complexity/)에서는 recursive 호출에 대해 시간복잡도가 $O(2^{n})$이라고 했습니다.  
+이전 [post](https://blog.devpour.net/posts/big-O-and-Time-Complexity/#recursive-runtime%EC%9E%AC%EA%B7%80%ED%98%B8%EC%B6%9C-%EC%88%98%ED%96%89%EC%8B%9C%EA%B0%84)에서는 recursive 호출에 대해 시간복잡도가 $O(2^{n})$이라고 했습니다.  
 'Merge sort'에서 'recursion'을 사용함에도, 이번에는 왜 $O(n\log{n})$일까?
 
 Array를 divide(분할)하는 작업의 비용이 매우 낮습니다.
