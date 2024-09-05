@@ -1,5 +1,5 @@
 ---
-title:  big-O(시간복잡도)
+title: Big-O notation and complexity(big-O 표기법과 복잡도)
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-08-29 19:00:00 +0900
@@ -8,7 +8,6 @@ tags: [Computer Science, Algorithm, 알고리즘, Time Complexity]
 pin: false
 math: true
 ---
-# big-O(시간복잡도)
 
 디스크에 있는 파일을 다른 지역의 친구에게 보낸다고 해보자. 대부분의 사람이, 이메일이나 FTP와 같은 network방식을 떠올리게됩니다.  
 하지만 파일의 크기가 1TB라면? 이럴때는 자동차를 타고 직접 전달하는게 빠르지 않을까?  
@@ -270,6 +269,46 @@ $$
 
 공간복잡도는 $O(N)$인데,  
 이는 특정 시각에 사용하고 있는 공간의 크기가 $O(N)$이기 때문입니다.
+
+#### Recursive Algorithm의 최적화
+Recursive Algorithm의 경우, 단순히 'recursion'만 적용하면, $O(2^{n})$의 Time complexity(시간복잡도)를 갖게 됩니다.
+```rust
+fn fibonacci(n: u32) -> u32 {
+    if n <= 1 {
+        return n
+    }
+    return fibonacci(n-1) + fibonacci(n-2)
+}
+
+```
+
+하지만, fibonacci 처럼, 같은 계산을 중복으로 실행해야하는 경우가 많은 Algorithm은, 이 결과 값을 저장(cache)함으로서 성능을 개선할 수 있습니다.
+```rust
+
+// 메모이제이션을 적용한 피보나치 함수
+fn fibonacci_memo(n: u32, memo: &mut HashMap<u32, u32>) -> u32 {
+    if let Some(&result) = memo.get(&n) {
+        return result;
+    }
+
+    let result = if n <= 1 {
+        n
+    } else {
+        fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo)
+    };
+
+    memo.insert(n, result);
+    result
+}
+
+fn main() {
+    let mut memo = HashMap::new();
+    let n = 10; // 계산할 n 값
+    let result = fibonacci_memo(n, &mut memo);
+    println!("Fibonacci({}) = {}", n, result);
+}
+```
+
 
 ## Reference
 
