@@ -41,7 +41,14 @@ _Merge sort analysis with Tree. 출처: [https://mathcenter.oxford.emory.edu/sit
 : $O(\log{n})$, array를 반으로 줄여나가면서 함수의 실행횟수가 $O(\log{n})$이 됩니다. 위 tree 이미지에서 tree depth가 이에 해당합니다.
 
 2. 정복(conquer) 단계
-: $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다.
+: $O(n)$, 이 과정에서 정렬이 이루어지므로, 대상이 되는 array의 요소들을 1회씩 읽어야 합니다
+
+#### 왜 $O(2^{n})$이 아닐까?
+이전 [post](https://blog.devpour.net/posts/big-O-and-Time-Complexity/)에서는 recursive 호출에 대해 시간복잡도가 $O(2^{n})$이라고 했었다.  
+이번에는 왜 $O(n\log{n})$일까?
+
+
+
 
 ### Space Complexity(공간복잡도)
 $$

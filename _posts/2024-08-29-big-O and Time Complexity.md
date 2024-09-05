@@ -1,5 +1,5 @@
 ---
-title:  big-O(시간복잡도)
+title: Big-O notation and complexity(big-O 표기법과 복잡도)
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-08-29 19:00:00 +0900
@@ -8,7 +8,6 @@ tags: [Computer Science, Algorithm, 알고리즘, Time Complexity]
 pin: false
 math: true
 ---
-# big-O(시간복잡도)
 
 디스크에 있는 파일을 다른 지역의 친구에게 보낸다고 해보자. 대부분의 사람이, 이메일이나 FTP와 같은 network방식을 떠올리게됩니다.  
 하지만 파일의 크기가 1TB라면? 이럴때는 자동차를 타고 직접 전달하는게 빠르지 않을까?  
