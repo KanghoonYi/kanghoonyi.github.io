@@ -45,7 +45,7 @@ _Merge sort analysis with Tree. 출처: [https://mathcenter.oxford.emory.edu/sit
 
 #### 왜 $O(2^{n})$이 아닐까?
 이전 [post](https://blog.devpour.net/posts/big-O-and-Time-Complexity/)에서는 recursive 호출에 대해 시간복잡도가 $O(2^{n})$이라고 했습니다.  
-이번에는 왜 $O(n\log{n})$일까?  
+'Merge sort'에서 'recursion'을 사용함에도, 이번에는 왜 $O(n\log{n})$일까?
 
 Array를 divide(분할)하는 작업의 비용이 매우 낮습니다.
 : 'Recursive Algorithm'에서의 'Time Complexity(시간복잡도)'는 각 function들(tree의 node에 해당함)의 실행시간을 고려한 결과입니다.
