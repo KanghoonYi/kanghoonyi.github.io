@@ -1,5 +1,5 @@
 ---
-title: LeetCode 75-Greatest Common Divisor of Strings
+title: LeetCode 75-2 Greatest Common Divisor of Strings
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-09-09 18:05:00 +0900
