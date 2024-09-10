@@ -22,10 +22,12 @@ math: true
 : Input: candies = [2,3,5,1,3], extraCandies = 3
 : Output: [true,true,true,false,true]
 
-Input의 값을 고려하여 아래의 조건을 충족해야 합니다.
+Input의 값을 고려하여 아래의 조건을 충족해야 합니다.  
+
 $$
 \text{candies}+3\geqq5 \rightarrow candies \geqq 2
 $$
+
 즉, candies array에서, 각 요소(element)가 $candies \geqq 2$를 만족하는지 확인하면 됩니다.
 
 ```rust
@@ -44,8 +46,8 @@ impl Solution {
 ```
 
 ## 기타 의견
-$candies \geqq 2$를 확인할 때에, CPU의 [SIMD](https://ko.wikipedia.org/wiki/SIMD)를 활용하여 병렬처리할 수 있을듯 하다.  
-rust에선 [std::simd](https://doc.rust-lang.org/std/simd/index.html)모듈로 'experimental API'로서 제공하고 있다.
+$candies \geqq 2$를 확인할 때에, CPU의 [SIMD](https://ko.wikipedia.org/wiki/SIMD)를 활용하여 병렬처리할 수 있을듯 합니다.  
+rust에선 [std::simd](https://doc.rust-lang.org/std/simd/index.html)모듈로 'experimental API'로서 제공하고 있습니다.
 
 ## References
 
