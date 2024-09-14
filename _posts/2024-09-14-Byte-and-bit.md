@@ -23,7 +23,7 @@ math: true
 > 컴퓨터에선, character를 특정 정수(bit로 표현한 integer)로 mapping하여 사용합니다.
 {: .prompt-tip }
 
-초기 컴퓨터는 주로 text데이터를 처리했기 때문에, 자연스럽게 byte가 메모리 공간을 할당하는 최소 단위가 되었습니다(character를 저장해야하기 때문에). 이후 수많은 ‘computer architecture’에서 **메모리의 주소를 나타내는 최소 단위**로 사용되었습니다.
+초기 컴퓨터는 주로 text데이터를 처리했기 때문에, 자연스럽게 byte가 메모리 공간을 할당하는 최소 단위가 되었습니다(character를 저장해야하기 때문에). 이후 수많은 ‘computer architecture’에서 **메모리의 공간을 나타내는 최소 단위**로 사용되었습니다.
 
 > 현재처럼 1byte = 8bit인 표준이 없을때는, Byte의 bit수는 Hardware에 따라 달라졌습니다.  
 > 특히 초기 컴퓨터에선, 6bit character code를 사용하는 시스템이 있었습니다.
