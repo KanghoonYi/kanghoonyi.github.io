@@ -1,5 +1,5 @@
 ---
-title: LeetCode 75-8 String Compression
+title: LeetCode 75-9 String Compression
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-09-20 18:05:00 +0900
@@ -39,8 +39,11 @@ math: true
 반복을 count한 값이 10이상이면, 각 1의 자리부터 각 자릿수를 분리하여, 집어 넣는 방식입니다.
 
 #### Complexity
-시간복잡도는 
+**시간복잡도(time complexity)** 는 $O(n)$입니다.  
+`chars`를 1회 순회(iteration의 의미)합니다. `convert_repeat_count_to_chars`가 각 iteration마다 실행되지만, 이는 count의 값의 자릿수에 의존적인것이라 constant하다고 여겼습니다
 
+**공간복잡도(space complexity)** 는 $O(1)$입니다.
+`chars`를 직접 변경하면서 iteration의 결과를 저장하고 있고, 때문에, `chars`에 비례하여 추가로 사용하고 있는 공간이 없어서, $O(1)$이라고 계산했습니다.
 
 ```rust
 fn compress(chars: &mut Vec<char>) -> i32 {
