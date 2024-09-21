@@ -22,6 +22,7 @@ math: true
   - 반드시 상수항(constant) 만큼의 공간(space)를 추가로 사용해야 합니다.
 - Note that group lengths that are 10 or longer will be split into multiple characters in chars
   - 반복되는 횟수가 10회 이상인경우, 이를 chars에 반영할때, 각 자리수를 별개의 char로 만들어서 넣어야 합니다.
+
 ## 문제 풀이
 
 ### 첫번째 시도
