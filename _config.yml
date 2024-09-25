@@ -19,11 +19,12 @@ timezone: Asia/Seoul
 
 title: KanghoonYi(Pour)                          # the main title
 
-tagline: Software Engineer   # it will display as the sub-title
-
-description: >-                        # used by seo meta and the atom feed
+tagline: >-   # it will display as the sub-title
   안녕하세요~ Software Engineer pour입니다
   This is Pour.
+
+description: >-                        # used by seo meta and the atom feed
+  Software Engineer
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://blog.devpour.net'
@@ -45,7 +46,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: rsx_-5MJzSR_3NNCqHNe9IxnKJxlD8Eid8_wN8e9c1I # fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
