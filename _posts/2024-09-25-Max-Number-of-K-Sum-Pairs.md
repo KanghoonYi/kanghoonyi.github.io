@@ -10,7 +10,7 @@ math: true
 ---
 
 ## 문제 요약
-integer array인 'nums'안에서, 그 합이 k를 만족하는 2개의 요소를 구합니다.
+integer array인 `nums`안에서, 그 합이 k를 만족하는 2개의 요소를 구합니다.
 - 이때, k를 만족하는 요소는 중복으로 사용될 수 없습니다.
 
 ## 문제 풀이
@@ -70,7 +70,7 @@ fn main() {
 
 #### 결과
 ![leetcode-13-submission-1](/assets/img/for-post/Max Number of K-Sum Pairs/img.png)
-__Leetcode 제출 결과__
+_Leetcode 제출 결과_
 
 
 ### 두번째 시도
@@ -125,7 +125,7 @@ fn main() {
 
 #### 결과
 ![leetcode-13-submission-1](/assets/img/for-post/Max Number of K-Sum Pairs/img_1.png)
-__Leetcode 제출 결과__
+_Leetcode 제출 결과_
 
 
 
