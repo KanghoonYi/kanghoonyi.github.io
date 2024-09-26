@@ -79,8 +79,11 @@ _Leetcode 제출 결과_
 **시간복잡도(time complexity)** 는 $O(n\log{n})$입니다.  
 **공간복잡도(space complexity)** 는 $O(n)$입니다.
 
-s와 t를 각각 바라보는 cursor를 총 2개 운영하였으며, 조건을 만족하면, cursor의 위치가 바뀝니다.  
-이때, t를 순회하는 동안, s를 모두 순회했는지 확인하여, 문제가 요구하는 결과값을 bool로 return합니다.
+`nums`의 sort 알고리즘을 `ipnsort`를 사용하도록 바꾸었으며, `nums`의 길이가 0인 경우 함수가 빨리 종료되도록 변경하였습니다
+
+> [ipnsort](https://github.com/Voultapher/sort-research-rs/blob/main/writeup/ipnsort_introduction/text.md)는 'quick sort'의 average case와 'heap sort'의 (빠른) worst case를 합친, 즉 장점을 합친 알고리즘이라고 합니다.  
+> [rust 공식문서에서 'sort_unstable' 참고](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_unstable)
+{: .prompt-tip }
 
 ```rust
 fn max_operations_v2(nums: Vec<i32>, k: i32) -> i32 {
