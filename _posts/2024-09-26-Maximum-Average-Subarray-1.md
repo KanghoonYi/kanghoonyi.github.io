@@ -1,5 +1,5 @@
 ---
-title: LeetCode 75-13 Maximum Average Subarray 1
+title: LeetCode 75-14 Maximum Average Subarray 1
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-09-26 17:14:00 +0900
