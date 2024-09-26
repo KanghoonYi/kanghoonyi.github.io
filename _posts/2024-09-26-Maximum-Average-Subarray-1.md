@@ -27,9 +27,11 @@ subarray의 합을 구하기 위해, array를 1회 순회하며 각 단계마다
 이는 아래의 수식을 통해 subarray의 합을 구하는데 사용됩니다.
 
 `nums`의 index n부터 m 까지의 subarray의 합은, 다음과 같은 수식으로 표현됩니다.
-$$$
+
+$$
 \sum_{i=n}^{m}\text{num}_i = \sum_{i=0}^{m}\text{num}_i - \sum_{i=0}^{n}\text{num}_i
-$$$
+$$
+
 이를 이용하여, subarrary의 합을 구하는 것을 단순화하고 최댓값을 찾습니다.
 
 ```rust
