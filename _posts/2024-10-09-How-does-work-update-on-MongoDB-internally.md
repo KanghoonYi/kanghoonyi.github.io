@@ -26,7 +26,19 @@ Mongodb와 같은 Document DB는 별도의 schema가 없습니다(정확하게�
 ## Default StorageEngine인 Wiredtiger 이해하기
 
 [WiredTiger](https://www.mongodb.com/ko-kr/docs/manual/core/wiredtiger/)는 Mongodb의 default storage engine입니다.  
-Mongodb에서 ‘write’는 ‘**Checkpoint**’와 ‘Journaling’을 기반으로 작동합니다.
+Mongodb에서 ‘write’는 ‘**Checkpoint**’와 ‘Journaling’을 기반으로 작동합니다.  
+또한, Disk상에서의 데이터는 ‘**Block**’으로 다루어 집니다.
+
+### [Block](https://source.wiredtiger.com/develop/arch-block.html#block_what)
+
+‘Block’은 ‘Wiredtiger’에서 disk에 있는 데이터를 다루는 단위입니다.
+
+> block is a chunk of data that is stored on the disk and operated on as a single unit.
+
+‘Wiredtiger’기반의 모든 file들은 이 ‘Block’으로 구성되어 있습니다.
+
+![WiredTiger Block Layout([https://source.wiredtiger.com/develop/arch-block.html#block_what](https://source.wiredtiger.com/develop/arch-block.html#block_what))](/assets/img/for-post/How%20does%20work%20update%20on%20MongoDB%20internally%3F/image.png)
+_WiredTiger Block Layout([https://source.wiredtiger.com/develop/arch-block.html#block_what](https://source.wiredtiger.com/develop/arch-block.html#block_what))_
 
 ### [Snapshot and Checkpoint](https://www.mongodb.com/docs/manual/core/wiredtiger/#snapshots-and-checkpoints)
 
@@ -69,10 +81,10 @@ DB에서의 ‘Journaling’은 Data에 변화(delta값)를 기록하는것을 �
 
 ### Compaction
 
-‘Checkpoint’는 여러 disk block을 참조합니다.  
+‘Checkpoint’는 여러 disk [block](https://source.wiredtiger.com/develop/arch-block.html)을 참조합니다.  
 > Each checkpoint references a certain set of disk blocks for a table.
 
-‘Checkpoint’가 쌓이면서, disk block또한 늘어나게 됩니다. 이에따라, 이제 사용하지 않는 old block을 정리하고, table을 탐색하는데 사용하는, [B-Tree](https://source.wiredtiger.com/11.0.0/arch-btree.html)를 새롭게 구축하게 됩니다.  
+‘Checkpoint’가 쌓이면서, disk block또한 늘어나게 됩니다. 이에 따라, 이제 사용하지 않는 old block을 정리하고, table을 탐색하는데 사용하는, [B-Tree](https://source.wiredtiger.com/11.0.0/arch-btree.html)를 새롭게 구축하게 됩니다.  
 이 과정을 ‘**Compaction**’이라고 합니다.
 
 ## Conclusion(결론)
@@ -95,11 +107,14 @@ Journaling and the WiredTiger Storage Engine
 journal
 : [Glossary](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-journal)
 
-[Issue] Add interface allowing partial updates to existing values
-: [](https://jira.mongodb.org/browse/WT-2972)
+\[Issue\] Add interface allowing partial updates to existing values
+: [Issue](https://jira.mongodb.org/browse/WT-2972)
 
 Amazon DocumentDB vs MongoDB 의 내부 아키텍쳐 와 장단점 비교
 : [Amazon DocumentDB vs MongoDB 의 내부 아키텍쳐 와 장단점 비교](https://www.slideshare.net/awskorea/t1s2pdf#11)
+
+WiredTiger의 Block
+: [WiredTiger: Block Manager](https://source.wiredtiger.com/develop/arch-block.html#block_what)
 
 WiredTiger의 Transaction using Snapshots
 : [WiredTiger: Snapshot](https://source.wiredtiger.com/develop/arch-snapshot.html#snapshot_transaction)
