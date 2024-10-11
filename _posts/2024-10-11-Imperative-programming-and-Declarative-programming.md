@@ -99,7 +99,7 @@ li.selected > p { background-color: blue; }
 : 특정 programming language에 dependency가 걸리지 않으며, ‘Declarative Language’를 이해하도록 language상관없이 구현할 수 있습니다.
 : Language에 대해 ‘보편적인’ Optimizer를 통해 성능을 끌어올릴 수 있습니다. 이는 ‘imperative’에서 각 로직에 맞게 최적화 해줘야하는것과는 달리, 보편적인 optimizer를 통해 성능 최적화를 할 수 있습니다.
 : > it also hides implementation details of the database engine, which makes it possible for the database system to introduce performance improvements without requiring any changes to queries.
-: ‘parallel execution(병렬 실행)’이 상대적으로 쉽습니다. 이는 ‘실행에 순서가 있어’ 병렬실행이 어려운 ‘Imperative**’**와 두드러지는 차이점입니다.
+: ‘parallel execution(병렬 실행)’구현이 상대적으로 쉽습니다(구현이 상대적으로 자유롭기 때문에). 이는 ‘실행에 순서가 있어’ 병렬실행 '구현'이 어려운 'Imperative'와 두드러지는 차이점입니다.
 : > declarative languages often lend themselves to parallel execution.
 
 ## References
