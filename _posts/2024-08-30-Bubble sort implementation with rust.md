@@ -4,7 +4,7 @@ author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-08-30 19:00:00 +0900
 categories: [Programming, rust]
-tags: [programming, rust, sort]
+tags: [programming, rust, sort, algorithm]
 pin: false
 math: true
 ---
