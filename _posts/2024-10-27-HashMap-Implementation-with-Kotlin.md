@@ -4,7 +4,7 @@ author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-10-27 03:22:00 +0900
 categories: [Programming, kotlin]
-tags: [Computer Science, programming, Data Structure, algorithm, kotlin]
+tags: [Computer Science, programming, Data Structure, kotlin]
 pin: true
 math: true
 ---
