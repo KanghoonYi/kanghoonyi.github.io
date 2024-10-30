@@ -194,7 +194,7 @@ __HashMap 내부 데이터 구조. From [https://oshyshkov.com/2021/07/07/java-h
 
 ### Rehashing
 
-HashMap에 값이 많이 추가될 수록, LinkedList의 길이가 커지며, HashMap 성능인 $O(n)$의 이점을 누리기가 어려워집니다. 그래서 `Rehashing` 이라는 작업이 이루어 집니다.  
+HashMap에 값이 많이 추가될 수록, LinkedList의 길이가 커지며, HashMap 성능인 $O(1)$의 이점을 누리기가 어려워집니다. 그래서 `Rehashing` 이라는 작업이 이루어 집니다.  
 `Rehashing`은 특정 threshold(임계점)을 기준으로, 이보다 더 많은 element가 쌓이면 이루어집니다.  
 내부 Array를 더 큰 사이즈(보통 2배 크기)로 다시 생성하여, **기존 Array의 값을 모두 copy합니다.**
 
