@@ -3,8 +3,8 @@ title: NIPA ML 프로젝트 ‘Synchro-you’ 공유
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-11-12 20:44:00 +0900
-categories: [Programming, kotlin]
-tags: [Computer Science, programming, Data Structure, kotlin]
+categories: [ML, MachineLearningBootcamp]
+tags: [ML, Vector, DeepLearning, Similarity, Product, NIPA, TeamProject]
 pin: true
 math: true
 ---
