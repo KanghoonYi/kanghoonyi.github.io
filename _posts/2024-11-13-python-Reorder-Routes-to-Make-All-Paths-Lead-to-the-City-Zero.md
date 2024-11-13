@@ -23,8 +23,8 @@ _Example 1_
 ### 첫번째 시도
 
 #### Complexity
-**시간복잡도(time complexity)** 는 $O(n)$입니다. 여기서 n은 connection의 길이, 즉 city의 갯수입니다. DFS의 복잡도는 edge와 node의 갯수와 관련이 있지만, 이 문제에서는 모두 city의 갯수와 일치하기 때문에, $O(n)$으로 표기하였습니다. 
-**공간복잡도(space complexity)** 는 $O(n)$입니다. connections의 길이에 따라 별도의 `Set[(int, int)]`과 `Dict[int, list[int]]`를 생성합니다.
+**시간복잡도(time complexity)** 는 $O(n)$입니다. 여기서 n은 connection의 길이, 즉 city의 갯수입니다. DFS의 복잡도는 edge와 node의 갯수와 관련이 있지만, 이 문제에서는 모두 city의 갯수와 일치하기 때문에, $O(n)$으로 표기하였습니다.   
+**공간복잡도(space complexity)** 는 $O(n)$입니다. connections의 길이에 따라 별도의 `Set[(int, int)]`과 `Dict[int, list[int]]`를 생성합니다.  
 
 > 복잡도를 계산하기 매우 어렵게 느껴서, 부정확합니다.
 {: .prompt-info }
