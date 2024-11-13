@@ -16,6 +16,7 @@ n개의 도시에 대한 connection(edge정보)이 주어지는데, 이는 방�
 최종 return값은 수정해야 하는 edge의 갯수입니다.
 
 ![leetcode-45-example-img-1](/assets/img/for-post/leetcode75-45/img.png)
+_Example 1_
 
 ## 문제 풀이
 
@@ -77,6 +78,11 @@ assert solution.minReorder(5, [[1,0],[1,2],[3,2],[3,4]]) == 2
 #### 결과
 ![leetcode-45-submission-1](/assets/img/for-post/leetcode75-45/python_submission_1.png)
 _Leetcode 제출 결과_
+
+
+## 후기
+혼자서 풀때는 풀지 못했고, Leetcode Study모임에서 풀어오신분에게 영감을 받아 풀 수 있었습니다.  
+확실히 Tree와 Graph로 넘어오면서 한층 더 난이도가 높게 느껴집니다.
 
 ## References
 
