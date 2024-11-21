@@ -4,7 +4,7 @@ author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-11-21 19:03:00 +0900
 categories: [Programming, networking]
-tags: [programming, networking, grpc, restapi, protobuf]
+tags: [programming, networking, grpc, restapi, protobuf, http/2]
 pin: false
 math: false
 ---
