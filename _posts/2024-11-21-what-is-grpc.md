@@ -258,7 +258,7 @@ gRPC 홈페이지
 : [gRPC](https://grpc.io/)
 
 gRPC의 지난 10년과 미래
-: [Ten Years of gRPC | Jung-Yu (Gina) Yeh & Richard Belleville, Google](https://youtu.be/5dMK5OW6WSw?si=QO4RTcbLcD9yMjXG)
+: [Ten Years of gRPC \| Jung-Yu (Gina) Yeh & Richard Belleville, Google](https://youtu.be/5dMK5OW6WSw?si=QO4RTcbLcD9yMjXG)
 
 gRPC Core Concept
 : [Core concepts, architecture and lifecycle](https://grpc.io/docs/what-is-grpc/core-concepts/)
@@ -267,7 +267,7 @@ gRPC와 REST의 차이점
 : [gRPC와 REST 비교 - 애플리케이션 설계의 차이 - AWS](https://aws.amazon.com/ko/compare/the-difference-between-grpc-and-rest/)
 
 gRPC VS REST
-: [gRPC vs REST - A Brief Comparison | Refine](https://refine.dev/blog/grpc-vs-rest/#step-4)
+: [gRPC vs REST - A Brief Comparison \| Refine](https://refine.dev/blog/grpc-vs-rest/#step-4)
 
 protobuf(Protocol Buffers)
 : [Protocol Buffers](https://protobuf.dev/)
