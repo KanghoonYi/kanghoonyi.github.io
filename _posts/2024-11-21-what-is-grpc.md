@@ -121,8 +121,8 @@ JSON은 사람이 이해하기 쉬워서 디버깅이 쉽고, 기존의 XML에 �
 
 protobuf는 Interface를 정의하는 언어(IDL)로서, 메세지 교환 포맷을 결정하는 역할을 합니다.
 
-> gRPC can use protocol buffers as both its Interface Definition Language (IDL) and as its underlying message interchange format.
-from [What is gRPC?](https://grpc.io/docs/what-is-grpc/introduction/)
+> gRPC can use protocol buffers as both its Interface Definition Language (IDL) and as its underlying message interchange format.  
+> from [What is gRPC?](https://grpc.io/docs/what-is-grpc/introduction/)
 
 
 ```protobuf
