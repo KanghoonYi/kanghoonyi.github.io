@@ -227,8 +227,6 @@ Istio는 마이크로서비스 간의 네트워크 통신을 관리하는 서비
 - Istio는 gRPC 서비스에 대해 **재시도(Retry)**, **타임아웃(Timeout)**, **Fault Injection(장애 테스트)** 같은 네트워크 레벨의 제어 기능을 제공합니다.
 
     ```yaml
-    yaml
-    코드 복사
     apiVersion: networking.istio.io/v1alpha3
     kind: VirtualService
     metadata:
