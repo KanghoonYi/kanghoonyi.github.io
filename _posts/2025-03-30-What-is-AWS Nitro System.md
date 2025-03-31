@@ -133,8 +133,8 @@ AWS re:Invent 2018: Powering Next-Gen EC2 Instances: Deep Dive into the Nitro Sy
 : [AWS re:Invent 2018: Powering Next-Gen EC2 Instances: Deep Dive into the Nitro System (CMP303-R1)](https://www.youtube.com/watch?v=e8DVmwj3OEs)
 
 ENA Express 소개
-: [Amazon ENA Express – EC2에서 향상된 네트워크 지연 시간 및 흐름당 성능 | Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/new-ena-express-improved-network-latency-and-per-flow-performance-on-ec2/)
-: [AWS 고성능 컴퓨팅 네트워크, 2부: AWS가 제공하는 고성능 네트워크 프로토콜, SRD(Scalable Reliable Datagram) | Amazon Web Services](https://aws.amazon.com/ko/blogs/tech/srd/)
+: [Amazon ENA Express – EC2에서 향상된 네트워크 지연 시간 및 흐름당 성능 Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/new-ena-express-improved-network-latency-and-per-flow-performance-on-ec2/)
+: [AWS 고성능 컴퓨팅 네트워크, 2부: AWS가 제공하는 고성능 네트워크 프로토콜, SRD(Scalable Reliable Datagram) Amazon Web Services](https://aws.amazon.com/ko/blogs/tech/srd/)
 
 SRD
 : A Cloud-Optimized Transport Protocol for Elastic and Scalable HPC
