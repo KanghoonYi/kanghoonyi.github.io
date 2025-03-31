@@ -25,12 +25,12 @@ Public Cloud Provider로 AWS를 주로 사용하게 되는데, AWS의 모든 서
 _‘Xen’ Project Architecture(from: [https://wiki.xenproject.org/](https://wiki.xenproject.org/))_
 
 ‘Xen’은 “Dom0(Domain 0)”이라는 특수한 가상 머신을 띄어서, Host의 장치들과 통신합니다.  
-이는 “Dom0”이, 다른 VM(Virtual Machine)들에 대한 관리자 역할 및 네트워크, 디스크 I/O(Input/Output)을 중개하는 역할하는것을 의미합니다.  
+이는 “Dom0”이, '다른 VM(Virtual Machine)들에 대한 관리자 역할' 및 '네트워크, 디스크 I/O(Input/Output)를 중개 역할'하는것을 의미합니다.  
 
 때문에, 이 구조는 다음과 같은 한계를 같습니다.
 : “Dom0”운영을 위한 CPU 및 메모리 할당을 해야함.
 : I/O 성능의 Bottleneck
-    : “Dom0”의 중개를 통해 Host의 자원을 사용하게 되어, 병목을 유발하게 됩니다. 예를 들면, EBS 통새 고속 I/O가 필요할 때, “Dom0”의 처리 능력에 의해 속도가 제한될 수 있습니다.
+    : “Dom0”의 중개를 통해 Host의 자원을 사용하게 되어, 병목을 유발하게 됩니다. 예를 들면, EBS 통해 고속 I/O가 필요할 때, “Dom0”의 처리 능력에 의해 속도가 제한될 수 있습니다.
 
 #### Nitro System의 강점
 
