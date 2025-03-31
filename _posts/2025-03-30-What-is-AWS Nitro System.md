@@ -79,7 +79,30 @@ _Nitro System virtualization architecture(from “[The Security Design of the AW
   
     덕분에 Hypervisor에 따른 오버헤드가 거의 없으며,  
     단순한 구조 덕분에, 공격 표면(attack surface)이 작아지는 효과가 있습니다.
-    
+
+
+### Nitro System의 detail한 부분  
+이 부분에선, ‘AWS Nitro System’에서 조사하다가 인상 깊었던 부분에 대해서 다루려고 합니다.
+
+#### Amazon ENA(Elastic Network Adapter) Express
+
+기존의 TCP기반 network에선, 다음 이미지와 같이 packet을 보내는 'single path'를 사용했습니다.  
+![기존의 TCP flow Hashing](/assets/img/for-post/What%20is%20AWS%20Nitro%20System/image%204.png)
+_기존의 TCP flow Hashing_
+
+때문에, 이 Single Path를 관리하기 위한 ‘congestion control(혼잡 제어)’, ‘패킷 재전송’, ‘connection Re-establishing’에 오버헤드가 걸리게 됩니다.  
+
+이를 해결하기 위해, [SRD(Scalable Reliable Datagram)](https://aws.amazon.com/ko/blogs/tech/srd/)기반의 **ENA Express**가 도입되게 됩니다.  
+![SRD 기반의 ENA Express](/assets/img/for-post/What%20is%20AWS%20Nitro%20System/image%202.png)
+_SRD 기반의 ENA Express_
+
+SRD에선 Packet을 여러 경로(multi-path)를 통해 전달하게 됩니다. 이는, TCP의 높은 신뢰성을 유지하면서, 고속처리를 가능하게 해줍니다.  
+‘Nitro System’에선 이 SRD에 대한 처리를 별도의 Network card가 담당하며, Packet의 **순서**를 맞춰서 분해하고, 재조립하는 과정을 수행합니다.  
+이 ‘ENA Express’는 TCP와 UDP와 같은 모든 환경에서 사용할 수 있습니다.  
+
+![ENA Express의 개선 효과](/assets/img/for-post/What%20is%20AWS%20Nitro%20System/image%203.png)
+_ENA Express의 개선 효과_
+
 
 ## 마무리
 
@@ -93,6 +116,9 @@ _Nitro System virtualization architecture(from “[The Security Design of the AW
 
 AWS Nitro System 소개
 : [AWS Nitro System](https://aws.amazon.com/ko/ec2/nitro/)
+
+Deep dive into the AWS Nitro System
+: [AWS re:Invent 2023 - Deep dive into the AWS Nitro System (CMP306)](https://youtu.be/Cxie0FgLogg)
     
 AWS Nitro System Whitepaper
 : [The Security Design of the AWS Nitro System - The Security Design of the AWS Nitro System](https://docs.aws.amazon.com/whitepapers/latest/security-design-of-aws-nitro-system/security-design-of-aws-nitro-system.html)
@@ -105,3 +131,11 @@ KVM(Kernel-based Virtual Machine)
     
 AWS re:Invent 2018: Powering Next-Gen EC2 Instances: Deep Dive into the Nitro System (CMP303-R1)
 : [AWS re:Invent 2018: Powering Next-Gen EC2 Instances: Deep Dive into the Nitro System (CMP303-R1)](https://www.youtube.com/watch?v=e8DVmwj3OEs)
+
+ENA Express 소개
+: [Amazon ENA Express – EC2에서 향상된 네트워크 지연 시간 및 흐름당 성능 Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/new-ena-express-improved-network-latency-and-per-flow-performance-on-ec2/)
+: [AWS 고성능 컴퓨팅 네트워크, 2부: AWS가 제공하는 고성능 네트워크 프로토콜, SRD(Scalable Reliable Datagram) Amazon Web Services](https://aws.amazon.com/ko/blogs/tech/srd/)
+
+SRD
+: A Cloud-Optimized Transport Protocol for Elastic and Scalable HPC
+: [Paper: A Cloud-Optimized Transport Protocol for Elastic and Scalable HPC](https://ieeexplore.ieee.org/document/9167399)
