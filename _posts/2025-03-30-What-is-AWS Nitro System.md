@@ -87,7 +87,7 @@ _Nitro System virtualization architecture(from “[The Security Design of the AW
 #### Amazon ENA(Elastic Network Adapter) Express
 
 기존의 TCP기반 network에선, 다음 이미지와 같이 packet을 보내는 'single path'를 사용했습니다.  
-![기존의 TCP flow Hashing](/assets/img/for-post/What%20is%20AWS%20Nitro%20System/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-03-31_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3.03.01.png)
+![기존의 TCP flow Hashing](/assets/img/for-post/What%20is%20AWS%20Nitro%20System/image%204.png)
 _기존의 TCP flow Hashing_
 
 때문에, 이 Single Path를 관리하기 위한 ‘congestion control(혼잡 제어)’, ‘패킷 재전송’, ‘connection Re-establishing’에 오버헤드가 걸리게 됩니다.  
