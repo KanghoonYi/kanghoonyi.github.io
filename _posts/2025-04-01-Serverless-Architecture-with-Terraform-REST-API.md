@@ -1,5 +1,5 @@
 ---
-title: Serverless Architecture with Terraform
+title: Serverless Architecture with Terraform - REST API
 author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2025-04-01 11:33:00 +0900
@@ -123,7 +123,8 @@ const entryFilePaths = globSync('src/functions/**/handler.ts', {
    build된 결과물을 기준으로, 외부 dependency를 다시 설치합니다.
 
 
-### Souce Code build를 Terraform과 연동
+### Souce Code build 과정을 Terraform에 표현하기
+여기서는 Terraform에서 Source code build 과정을 명시해주고, Local 구동이 가능하게 ‘AWS SAM Metdata’를 자동으로 생성하게 해줘야 합니다.
 
 [https://github.com/KanghoonYi/terraform-aws-examples/blob/main/examples/lambda-base/apigateway/tfModules/APIGatewayHandler/main.tf](https://github.com/KanghoonYi/terraform-aws-examples/blob/main/examples/lambda-base/apigateway/tfModules/APIGatewayHandler/main.tf)
 
@@ -181,7 +182,103 @@ resource "null_resource" "sam_metadata_aws_lambda_function" {
 }
 ```
 
-이제 Terraform에서 Source code build과정을 명시해주고, Local 구동이 가능하게 ‘AWS SAM Metdata’를 자동으로 생성하게 해줘야 합니다.  
+  
+
+### Terraform에서 Source Code에 대한 Lambda 정의하기
+Terraform으로 명시한 ‘Source Code Build’ 결과물을 ZIP파일로 만들고, Lambda로 명시합니다.
+
+[https://github.com/KanghoonYi/terraform-aws-examples/blob/main/examples/lambda-base/apigateway/tfModules/APIGatewayHandler/main.tf](https://github.com/KanghoonYi/terraform-aws-examples/blob/main/examples/lambda-base/apigateway/tfModules/APIGatewayHandler/main.tf)  
+
+```bash
+module "APIGatewayLambdaHandler" {
+  source        = "terraform-aws-modules/lambda/aws"
+  architectures = ["arm64"]
+  timeout       = 15
+
+  function_name       = local.function_name
+  description         = var.lambda_description
+  handler             = var.handler_src
+  runtime             = "nodejs22.x"
+  memory_size         = 256
+  publish             = true
+  create_function     = true
+  create_package      = true
+  create_role         = false
+  create_sam_metadata = false # 상위 과정에서 sam metadata를 수동으로 생성해야 하기 때문에, false로 세팅합니다
+
+  source_path = [
+    {
+      path = local.esbuild_src
+      commands = [
+        "npm install --production",
+        ":zip" # AWS Lambda에 적용하기 위해, source code를 zip파일로 압축합니다.
+      ],
+      patterns : [
+        "node_modules/.+",
+        "!node_modules/@aws-sdk/.*",
+      ]
+    }
+  ]
+
+  store_on_s3 = true
+  s3_bucket   = var.source_code_bucket_name
+
+  environment_variables = local.combined_env == null ? {} : local.combined_env
+
+  lambda_role = var.lambda_role_arn
+
+  event_source_mapping = {
+	  # SQS와 같이 Event mapping기능을 사용해야하는 경우에 여기에서 설정하게 됩니다.
+  }
+
+  tracing_mode          = "Active"
+  attach_network_policy = true
+  attach_tracing_policy = true
+
+  logging_log_group                 = "/aws/lambda/${local.function_name}" # Cloudwatch에서 사용할 Log Group이름을 설정합니다
+  cloudwatch_logs_retention_in_days = var.log_ttl_days
+
+  depends_on = [
+    terraform_data.build_app,
+  ]
+}
+
+# Proxy Resource (/{proxy+})
+resource "aws_api_gateway_resource" "proxy" {
+  rest_api_id = var.agw_rest_api_id
+  parent_id   = var.agw_parent_resource_id
+  path_part   = var.agw_http_path
+}
+
+# Method (ANY)
+resource "aws_api_gateway_method" "proxy_method" {
+  rest_api_id   = var.agw_rest_api_id
+  resource_id   = aws_api_gateway_resource.proxy.id
+  http_method   = var.agw_http_method
+  authorization = "NONE"
+}
+
+# Integration with Lambda
+resource "aws_api_gateway_integration" "lambda" {
+  rest_api_id             = var.agw_rest_api_id
+  resource_id             = aws_api_gateway_resource.proxy.id
+  http_method             = aws_api_gateway_method.proxy_method.http_method
+  integration_http_method = "POST" # API Gateway에서 Lambda를 실행할때 사용하는 method입니다. Lambda를 Invoke하는 것은 'POST'로만 가능합니다.
+  type                    = "AWS_PROXY"
+  uri                     = module.APIGatewayLambdaHandler.lambda_function_invoke_arn
+}
+
+# Lambda Permission for API Gateway
+# API Gateway에서 Lambda를 실행할 수 있는 권한을 명시합니다.
+resource "aws_lambda_permission" "apigw" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = module.APIGatewayLambdaHandler.lambda_function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${var.agw_execution_arn}/*/*"
+}
+```
+
 
 
 ### Local 에서 HTTP Server 실행 방법
