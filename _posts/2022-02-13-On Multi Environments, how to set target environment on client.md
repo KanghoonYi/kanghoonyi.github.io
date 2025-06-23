@@ -4,7 +4,7 @@ author:
 name: KanghoonYi(pour)
 date: 2022-02-13 21:55:00 +0900
 categories: [AWS]
-tags: [AWS, Architecture, VPN]
+tags: [aws, Architecture, VPN]
 pin: false
 ---
 
