@@ -1,10 +1,13 @@
 # hidden files
 .*
+!.nvmrc
 !.git*
 !.editorconfig
 !.nojekyll
 !.travis.yml
 !.ruby-version
+!.stylelintrc.json
+!.markdownlint.json
 
 # bundler cache
 _site
@@ -16,4 +19,3 @@ vendor
 
 # npm dependencies
 node_modules
-package-lock.json
