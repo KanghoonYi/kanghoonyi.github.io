@@ -4,7 +4,7 @@ author:
 name: KanghoonYi(pour)
 date: 2022-08-15 19:55:00 +0900
 categories: [AWS]
-tags: [AWS, Architecture, Region]
+tags: [aws, Architecture, Region]
 pin: false
 ---
 

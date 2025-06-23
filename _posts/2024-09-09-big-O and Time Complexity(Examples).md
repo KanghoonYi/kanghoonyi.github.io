@@ -4,7 +4,7 @@ author: KanghoonYi(pour)
 name: KanghoonYi(pour)
 date: 2024-09-09 21:01:16 +0900
 categories: [Books, Cracking The Coding Interview]
-tags: [Computer Science, Algorithm, 알고리즘, Time Complexity]
+tags: [Computer Science, algorithm, 알고리즘, Time Complexity]
 pin: false
 math: true
 ---

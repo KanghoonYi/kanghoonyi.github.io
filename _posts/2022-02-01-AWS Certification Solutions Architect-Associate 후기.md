@@ -5,7 +5,7 @@ name: KanghoonYi(pour)
 link: https://www.credly.com/badges/e2cea37d-394b-4988-a13f-b0c65f7a921f/public_url
 date: 2022-02-01 20:55:00 +0900
 categories: [AWS, Certification]
-tags: [AWS, Certification, Associate]
+tags: [aws, Certification, Associate]
 pin: false
 ---
 

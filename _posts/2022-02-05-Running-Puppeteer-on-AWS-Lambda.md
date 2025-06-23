@@ -5,7 +5,7 @@ name: KanghoonYi(pour)
 link: https://github.com/KanghoonYi/lambda-puppeteer
 date: 2022-02-05 20:55:00 +0900
 categories: [AWS, Lambda]
-tags: [AWS, Lambda, Puppeteer]
+tags: [aws, lambda, Puppeteer]
 pin: false
 ---
 
