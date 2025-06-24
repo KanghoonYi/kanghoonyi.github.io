@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-23 Equal Row and Column Pairs by python
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-10-09 19:00:00 +0900
 categories: [Programming, python, leetcode75]

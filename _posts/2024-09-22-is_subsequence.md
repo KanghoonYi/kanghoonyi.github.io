@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-11 Is Subsequence
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-22 14:48:00 +0900
 categories: [Programming, rust, leetcode75]

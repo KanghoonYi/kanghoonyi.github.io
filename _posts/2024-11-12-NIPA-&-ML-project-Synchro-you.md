@@ -1,6 +1,6 @@
 ---
 title: NIPA ML 프로젝트 ‘Synchro-you’ 공유
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-11-12 20:44:00 +0900
 categories: [ML, MachineLearningBootcamp]

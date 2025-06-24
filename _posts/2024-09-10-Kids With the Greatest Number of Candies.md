@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-3 Kids With the Greatest Number of Candies
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-10 15:53:00 +0900
 categories: [Programming, rust, leetcode75]

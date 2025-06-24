@@ -1,7 +1,6 @@
 ---
 title: Multi-region Architecture 구성하기
-author:
-name: KanghoonYi(pour)
+author: KanghoonYi
 date: 2022-08-15 19:55:00 +0900
 categories: [AWS]
 tags: [aws, Architecture, Region]

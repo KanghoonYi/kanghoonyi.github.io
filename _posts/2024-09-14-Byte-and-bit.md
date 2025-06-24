@@ -1,6 +1,6 @@
 ---
 title: 1 Byte and The number of bits(1Byte와 bit수)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-14 19:31:00 +0900
 categories: [Programming, Computer Basics]

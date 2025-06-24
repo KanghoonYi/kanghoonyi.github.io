@@ -1,6 +1,6 @@
 ---
 title: How to make a blog by using Jekyll(Jekyll을 사용해서 blog를 만드는 방법)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2023-11-02 19:00:00 +0900
 categories: [Guide, Blog]

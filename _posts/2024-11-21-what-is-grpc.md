@@ -1,6 +1,6 @@
 ---
 title: What is gRPC?
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-11-21 19:03:00 +0900
 categories: [Programming, networking]

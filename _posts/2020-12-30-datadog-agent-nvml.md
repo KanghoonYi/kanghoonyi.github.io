@@ -1,7 +1,6 @@
 ---
 title: Setup Datadog Agent with nvml
-author:
-name: KanghoonYi(pour)
+author: KanghoonYi
 link: https://github.com/KanghoonYi/datadog-agent-nvml
 date: 2020-12-30 20:55:00 +0900
 categories: [Datadog]

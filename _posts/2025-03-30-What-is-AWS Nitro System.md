@@ -1,6 +1,6 @@
 ---
 title: What is “AWS Nitro System”?
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2025-03-30 21:12:00 +0900
 categories: [AWS, Architecture]

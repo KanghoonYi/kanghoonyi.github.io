@@ -1,6 +1,6 @@
 ---
 title: AWS Summit Seoul 2025 Insight
-author: KanghoonYi(pour)
+author: KanghoonYi
 date: 2025-06-14 12:12:00 +0900
 categories: [AWS, Summit]
 tags: [aws, conference, aws summit]

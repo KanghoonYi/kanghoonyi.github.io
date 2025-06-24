@@ -1,6 +1,6 @@
 ---
 title: How does work 'update' on MongoDB internally?
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-10-06 02:29:00 +0900
 categories: [Books, Designing Data-Intensive Applications]

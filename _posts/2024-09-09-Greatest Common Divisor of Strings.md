@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-2 Greatest Common Divisor of Strings
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-09 18:05:00 +0900
 categories: [Programming, rust, leetcode75]

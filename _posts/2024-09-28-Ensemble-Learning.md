@@ -1,6 +1,6 @@
 ---
 title: Ensemble Learning Overview
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-28 18:23:00 +0900
 categories: [ML, EnsembleLearning]

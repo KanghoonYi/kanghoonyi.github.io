@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-12 Container With Most Water
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-24 20:12:00 +0900
 categories: [Programming, rust, leetcode75]

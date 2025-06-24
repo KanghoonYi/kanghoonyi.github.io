@@ -1,6 +1,6 @@
 ---
 title: Vector Similarity Explained(Vector의 유사도를 측정하는 방법에 관하여)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-08-27 19:00:00 +0900
 categories: [ML, MachineLearningBootcamp]

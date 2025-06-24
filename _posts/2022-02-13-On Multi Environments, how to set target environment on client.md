@@ -1,7 +1,6 @@
 ---
 title: Multi Environments 서버 환경에서, client에서 접속 환경 결정하기(VPN을 이용)
-author:
-name: KanghoonYi(pour)
+author: KanghoonYi
 date: 2022-02-13 21:55:00 +0900
 categories: [AWS]
 tags: [aws, Architecture, VPN]

@@ -1,6 +1,6 @@
 ---
 title: 스타트업을 위한 MySQL 튜닝 방법
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2025-03-18 22:55:00 +0900
 categories: [DB, MySQL]
