@@ -6,6 +6,8 @@ categories: [DevOps, kubernetes]
 tags: [aws, kubernetes, cncf, k8s, ecs, eks]
 pin: false
 math: false
+image:
+  path: /assets/img/for-post/k8s%20introduction/image%202.png
 ---
 
 오늘날, IT서비스를 구성할때, Kubernetes와 같은 Orchestration 환경을 기본으로 시작하게 됩니다.  
@@ -30,10 +32,10 @@ Kubernetes가 오늘날 처럼 인프라 운영의 핵심으로 자리 잡기 �
 
 Docker가 탄생하면서, MSA환경의 어려운 점들을 해결해 줬습니다.
 
-![Docker의 Architecture](/assets/img/for-post/k8s%20introduction/image.png)
+![Docker의 Architecture](/assets/img/for-post/k8s%20introduction/image.png){: .w-50 }
 _Docker의 Architecture_
-
-![VM의 Architecture](/assets/img/for-post/k8s%20introduction/image%201.png)
+  
+![VM의 Architecture](/assets/img/for-post/k8s%20introduction/image%201.png){: .w-50 }
 _VM의 Architecture_
 
 VM은 별도의 OS와 Kernel를 가지고 있어, Layer추가로 인해 컴퓨팅 비용 손실이 많습니다.
@@ -52,7 +54,7 @@ Container(Docker와 같은) 기술이 MSA와 결합하면서, 어려웠던 '관�
 
 > Q: 왜 Orchestration이라 부르나요?  
 > A: 시스템을 구성하는 여러 서비스 사이에서 '조율(orchestrate)'을 하는 기술이라고 해서, 'Orchestration'이라고 부릅니다.  
-> ![image.png](/assets/img/for-post/k8s%20introduction/image%202.png)
+> ![image.png](/assets/img/for-post/k8s%20introduction/image%202.png){: .w-50 }
 {: .prompt-info }
 
 ## Cloud Native와 Kubernetes
@@ -74,7 +76,7 @@ _CNCF를 졸업(Graduated)한 프로젝트들_
 - Kubernetes는 Cloud Native 패러다임을 구현하기 위한 핵심 기술입니다.
 - CNCF의 Seed 프로젝트 였습니다.
 
-## Kubernets 구성
+## Kubernetes 구성
 
 지휘자(Orchestrator) 역할을 하는 'Control Plane'과 구성원 역할을 하는 'Data Plane'으로 나뉩니다.
 
