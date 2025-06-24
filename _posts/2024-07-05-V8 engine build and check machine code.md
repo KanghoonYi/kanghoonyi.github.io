@@ -1,6 +1,6 @@
 ---
 title: V8 engine build and check machine code(V8 engine을 build하고 machine code 확인하기)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-07-05 14:10:02 +0900
 categories: [Typescript, Javascript]

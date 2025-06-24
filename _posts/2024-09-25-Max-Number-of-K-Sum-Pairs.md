@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-13 Max Number of K-Sum Pairs
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-25 15:39:00 +0900
 categories: [Programming, rust, leetcode75]

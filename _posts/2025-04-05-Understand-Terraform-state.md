@@ -1,6 +1,6 @@
 ---
 title: Terraform의 State와 Flow 이해하기
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2025-04-05 23:12:00 +0900
 categories: [DevOps, Terraform]

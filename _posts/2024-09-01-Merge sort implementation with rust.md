@@ -1,6 +1,6 @@
 ---
 title: Merge sort implementation with rust(rust로 병합정렬 구현)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-01 19:00:00 +0900
 categories: [Programming, rust]

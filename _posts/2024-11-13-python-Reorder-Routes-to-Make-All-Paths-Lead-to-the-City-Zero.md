@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-45 1466. Reorder Routes to Make All Paths Lead to the City Zero
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-11-13 15:31:00 +0900
 categories: [Programming, python, leetcode75]

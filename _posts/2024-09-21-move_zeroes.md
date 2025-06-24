@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-10 Move Zeroes
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-21 18:55:00 +0900
 categories: [Programming, rust, leetcode75]

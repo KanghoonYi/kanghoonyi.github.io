@@ -1,6 +1,6 @@
 ---
 title: LeetCode 75-14 Maximum Average Subarray 1
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-26 17:14:00 +0900
 categories: [Programming, rust, leetcode75]

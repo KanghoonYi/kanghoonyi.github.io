@@ -1,6 +1,6 @@
 ---
 title: Kubernetes(Orchestration) 개론
-author: KanghoonYi(pour)
+author: KanghoonYi
 date: 2025-06-25 00:09:00 +0900
 categories: [DevOps, kubernetes]
 tags: [aws, kubernetes, cncf, k8s, ecs, eks]

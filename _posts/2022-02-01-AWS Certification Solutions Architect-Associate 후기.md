@@ -1,7 +1,6 @@
 ---
 title: AWS Solution Architect-Associate 취득 후기
-author:
-name: KanghoonYi(pour)
+author: KanghoonYi
 link: https://www.credly.com/badges/e2cea37d-394b-4988-a13f-b0c65f7a921f/public_url
 date: 2022-02-01 20:55:00 +0900
 categories: [AWS, Certification]

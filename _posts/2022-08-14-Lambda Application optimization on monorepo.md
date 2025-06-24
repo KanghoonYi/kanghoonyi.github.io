@@ -1,7 +1,6 @@
 ---
 title: Lambda Application optimization on Monorepo
-author:
-name: KanghoonYi(pour)
+author: KanghoonYi
 date: 2022-08-14 20:25:00 +0900
 categories: [Typescript, Javascript]
 tags: [Typescript, Mono-repo, npm, MSA]

@@ -1,6 +1,6 @@
 ---
 title: HashMap Implementation with Kotlin
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-10-27 03:22:00 +0900
 categories: [Programming, kotlin]

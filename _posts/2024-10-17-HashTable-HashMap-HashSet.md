@@ -1,6 +1,6 @@
 ---
 title: Hash Table, Hash Map, Hash Set
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-10-17 16:13:00 +0900
 categories: [Programming, Computer Basics]

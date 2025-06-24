@@ -1,6 +1,6 @@
 ---
 title: Imperative programming(명령형 프로그래밍)과 Declarative programming(선언형 프로그래밍)
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-10-11 23:01:00 +0900
 categories: [Programming, Computer Basics]

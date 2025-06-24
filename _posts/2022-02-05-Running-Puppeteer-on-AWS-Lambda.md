@@ -1,6 +1,6 @@
 ---
 title: Running Puppeteer on AWS Lambda
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 link: https://github.com/KanghoonYi/lambda-puppeteer
 date: 2022-02-05 20:55:00 +0900

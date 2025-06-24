@@ -1,6 +1,6 @@
 ---
 title: Big-O notation and complexity(big-O 표기법과 복잡도) Examples
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-09 21:01:16 +0900
 categories: [Books, Cracking The Coding Interview]

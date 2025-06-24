@@ -1,6 +1,6 @@
 ---
 title: Chapter 1- Reliable, Scalable, and Maintainable Applications
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2024-09-16 23:51:00 +0900
 categories: [Books, Designing Data-Intensive Applications, PART 1- Foundation of Data Systems]

@@ -1,6 +1,6 @@
 ---
 title: Serverless Architecture with Terraform - REST API
-author: KanghoonYi(pour)
+author: KanghoonYi
 name: KanghoonYi(pour)
 date: 2025-04-01 11:33:00 +0900
 categories: [DevOps, Terraform]
