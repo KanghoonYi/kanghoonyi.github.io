@@ -42,18 +42,18 @@ gRPC는 이런 RPC의 문제들을 해결하며, 개발 편의성과 분산처�
 
 ### gRPC와 REST API 비교
 
-| 특징 | REST API | gRPC |
-| --- | --- | --- |
-| **프로토콜** | HTTP/1.1 | HTTP/2 |
-| **데이터 형식** | JSON, XML | Protobuf (바이너리) |
-| **성능** | 느림 | 빠름 |
-| **통신 방식** | 동기식 | 스트리밍 지원(양방향 포함) |
-| **읽기 쉬움** | 사람이 읽고 쓰기 쉬움 | 사람이 읽기 어려움 |
-| **사용 사례** | 간단한 웹 서비스 | 마이크로서비스, 실시간 애플리케이션 |
-| **연결 관리** | 무상태, Keep-Alive 필요 | 지속적 연결(Persistent Connection) |
-| **스트리밍 지원** | 제한적 | 양방향 스트리밍 지원 |
-| **네트워크 효율성** | 낮음 | 높음 |
-| **처리 속도** | 느림 | 빠름 |
+| 특징              | REST API         | gRPC |
+|-----------------|------------------| --- |
+| **프로토콜**        | HTTP/1.1, HTTP/2 | HTTP/2 |
+| **데이터 형식**      | JSON, XML        | Protobuf (바이너리) |
+| **성능**(상대적인 비교) | 느림               | 빠름 |
+| **통신 방식**       | 동기식              | 스트리밍 지원(양방향 포함) |
+| **읽기 쉬움**       | 사람이 읽고 쓰기 쉬움     | 사람이 읽기 어려움 |
+| **사용 사례**       | 간단한 웹 서비스        | 마이크로서비스, 실시간 애플리케이션 |
+| **연결 관리**       | 무상태, Keep-Alive 필요 | 지속적 연결(Persistent Connection) |
+| **스트리밍 지원**     | 제한적              | 양방향 스트리밍 지원 |
+| **네트워크 효율성**    | 낮음               | 높음 |
+| **처리 속도**       | 느림               | 빠름 |
 
 ![REST방식과 gRPC방식의 차이](/assets/img/for-post/What%20is%20gRPC/image.png)
 _REST방식과 gRPC방식의 차이 from [https://refine.dev/blog/grpc-vs-rest/#step-3-1](https://refine.dev/blog/grpc-vs-rest/#step-3-1)_
@@ -126,16 +126,17 @@ protobuf는 Interface를 정의하는 언어(IDL)로서, 메세지 교환 포맷
 
 
 ```protobuf
+syntax = "proto3";
+
+message HelloRequest {
+    string name = 1;
+}
+message HelloReply {
+    string message = 1;
+}
+
 service Greeter {
-	rpc SayHello (HelloRequest) returns (HelloReply) {}
-}
-
-messages HelloRequest {
-	string name = 1
-}
-
-messages HelloReply {
-	string message = 1
+    rpc SayHello(HelloRequest) returns (HelloReply);
 }
 ```
 
