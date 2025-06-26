@@ -5,6 +5,8 @@ date: 2022-08-15 19:55:00 +0900
 categories: [AWS]
 tags: [aws, Architecture, Region]
 pin: false
+image:
+    path: https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2021/06/22/Figure-2.-Multi-site-active-active-DR-strategy.png
 ---
 
 ### Multi-region이란 무엇인가?

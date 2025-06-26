@@ -4,8 +4,10 @@ author: KanghoonYi
 date: 2025-06-14 12:12:00 +0900
 categories: [AWS, Summit]
 tags: [aws, conference, aws summit]
-pin: false
+pin: true
 math: false
+image:
+    path: /assets/img/for-post/AWS%20Summit%20Seoul%202025/IMG_4316.jpeg
 ---
 ## 들어가면서
 이번 AWS Summit은 생성형 AI를 중심으로, 데이터 엔지니링, 운영, AI모델 활용 측면의 주제가 많았습니다.  
