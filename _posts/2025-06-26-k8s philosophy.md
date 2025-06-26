@@ -1,5 +1,5 @@
 ---
-title: 철학 | Kubernetes Deep Dive - 1
+title: Kubernetes의 철학(Philosophy) | Kubernetes Deep Dive - 1
 author: KanghoonYi
 date: 2025-06-26 23:46:00 +0900
 categories: [DevOps, kubernetes]
@@ -9,7 +9,7 @@ math: false
 image:
   path: /assets/img/for-post/k8s%20philosophy/kubernetes_logo.png
 ---
-어떤 기술을 사용함에 있어, 기술에 담긴 철학(Philosophy)을 이해하는건, 그 기술을 제대로 활용하기 위해, 필수적입니다.  
+어떤 기술을 사용함에 있어, 기술에 담긴 철학(Philosophy)을 이해하는건, 그 기술을 제대로 활용하기 위해 필수적입니다.  
 이번 Post에선, Kubernetes에 담긴 철학을 알아봄으로서, 제대로 활용하기 위한 첫 걸음을 떼고자 합니다.
 
 ## Kubernetes의 철학(Philosophy)
