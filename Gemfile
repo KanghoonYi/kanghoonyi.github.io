@@ -18,5 +18,5 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0
 gem "webrick", "~> 1.7"
-gem 'jekyll', '~> 4.3', '>= 4.3.3'
-gem "jekyll-theme-chirpy", "~> 7.1"
+gem 'jekyll', '~> 4.4'
+gem "jekyll-theme-chirpy", "~> 7.1.1"
