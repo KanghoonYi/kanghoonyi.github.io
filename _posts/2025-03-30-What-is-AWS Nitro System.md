@@ -7,6 +7,8 @@ categories: [AWS, Architecture]
 tags: [aws, server, machine, vm]
 pin: false
 math: false
+image:
+    path: /assets/img/for-post/What%20is%20AWS%20Nitro%20System/aws-nitro-cover.jpg
 ---
 
 
