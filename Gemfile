@@ -20,3 +20,7 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 gem "webrick", "~> 1.7"
 gem 'jekyll', '~> 4.4'
 gem "jekyll-theme-chirpy", "~> 7.1.1"
+gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
+
+gem "jekyll-feed", "~> 0.17.0"
