@@ -13,11 +13,6 @@ resource_hints:
     links:
       - rel: preconnect
       - rel: dns-prefetch
-  - url: https://www.youtube.com
-    links:
-      - rel: preconnect
-        opts: [crossorigin]
-      - rel: dns-prefetch
 
 
 # Web Fonts
