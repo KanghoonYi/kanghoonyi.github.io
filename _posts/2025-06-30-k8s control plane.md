@@ -33,7 +33,7 @@ Kubernetes를 조작(control)하기 위한 API를 외부에 노출하는 서비�
 > \- from [Admission Control in Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
 
 'Admission Control'은 요청의 '승인(Admission)'을 '제어(Control)'하는 기능을 말합니다.  
-‘kube-apiserver’로 들어온 요청을 가로채서(intercept), ‘변경, 검증’에 대한 별도의 과정을 수행하는 기능입니다.
+'kube-apiserver'로 들어온 요청을 가로채서(intercept), '변경, 검증'에 대한 별도의 과정을 수행하는 기능입니다.
 
 > 이 'Admission Control'은 요청에 대한 인증(authentication)과 인가(authorization)이 완료된 요청에 대해서 반영됩니다.
 {: .prompt-info }
@@ -196,6 +196,11 @@ Cluster의 리소스 요청, 정책(affinity/taint, toleration 등), 사용자 �
 ![Pod이 스케쥴링 되는 과정](/assets/img/for-post/k8s%20control%20plane/image%202.png)
 _Pod이 스케쥴링 되는 과정_
 
+<br>
+
+![Scheduler와 다른 Component의 상호작용](/assets/img/for-post/k8s%20control%20plane/image%203.png)
+_Scheduler와 다른 Component의 상호작용_
+
 [스케쥴링 정책(Scheduling Policies)](https://kubernetes.io/docs/reference/scheduling/policies/)를 통해 스케쥴링을 조정할 수 있습니다. (v1.23이전 한정)
 
 ```bash
@@ -234,7 +239,7 @@ clientConnection:
 
 ### Control Loop Flow
 
-![Control loop의 flow](/assets/img/for-post/k8s%20control%20plane/image%203.png){: .w-50 }
+![Control loop의 flow](/assets/img/for-post/k8s%20control%20plane/image%204.png){: .w-50 }
 _Control loop의 flow_
 
 'kube-controller-manager'는 'Control Loop'를 통해 Cluster의 현재상태와 목표 상태(Desired State)를 계속 비교하며, 동일하게 맞춥니다.  
@@ -345,6 +350,35 @@ AWS와 같은 특정 Cloud에 대응하는 Control Logic을 담고 있는 compon
 - Volume Controller  
   Kubernetes의 Persistent Volume을 클라우드 서비스에서 제공하는 볼륨과 연결시켜 줍니다.(NAS와 같은 것들)
 
+<br>
+
+## Pod배치를 위한 kube-scheduler과 kube-controller-manager의 상호작용
+
+'kube-scheduler'는 Pod을 Node에 배치하는 역할을 하고, 'kube-controller-manager'는 Desired State를 달성하는 역할(Pod을 늘리는 역할)을 하는데, 이 과정은 어떻게 이루어 질까?
+
+![Deployment반영을 위한 component간 상호작용 Flow](/assets/img/for-post/k8s%20control%20plane/k8s-pod-binding-flow.png)
+_Deployment반영을 위한 component간 상호작용 Flow_
+
+만약, Deployment를 통해 Pod을 생성하고 있다면,  
+1. Controller manager에서 Pod Object 생성  
+   Deployment → ReplicaSet → Pod 오브젝트를 생성합니다.  
+   이때 Pod은 spec.nodeName이 비어 있는 **“Pending” 상태**입니다
+
+2. scheduler에서 Pod을 Node에 배치  
+   Pending Pod를 발견 → 노드 리스트 중 필터(Filter)·스코어(Score) → Binding 호출 (spec.nodeName 설정)
+
+3. Controller manager에서 후속작업 수행(optional)  
+   예: DaemonSet 컨트롤러로 데몬 배포, HPA 컨트롤러로 Replica 수 조정 등
+
+4. kubelet에서 바인딩(Binding) 실행  
+   kubelet이, 바인딩된 Node에서 Pod을 실제로 실행합니다.
+
+
+kube-controller-manager가
+: **"무엇을 몇 개"를 만들 것인지**(Pod 등 리소스 생성·삭제)를 결정하고 API 호출을 수행하면,
+
+kube-scheduler는
+: "어디에" 배치할지(어떤 노드에 놓을지) 결정하여 Binding을 수행합니다.
 
 ## References
 
@@ -377,3 +411,6 @@ kube-controller-manager, Controllers | kubernetes.io
 
 Horizontal Pod Autoscaling | kubernetes.io
 : [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+
+Understanding Kubernetes Architecture | devopscube.com
+: [Understanding Kubernetes Architecture\: A Comprehensive Guide](https://devopscube.com/kubernetes-architecture-explained/)
