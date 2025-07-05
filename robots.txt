@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /posts
+
+Sitemap: https://blog.devpour.net/sitemap.xml
