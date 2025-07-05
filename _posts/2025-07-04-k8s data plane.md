@@ -53,6 +53,7 @@ Kubernetes를 조작하기 위한 Client인 `kubectl`을 통해, Node Object를 
 'Pod'안에 있는 container들이 계속해서 동작하도록(running상태 이도록) 하며, **노드를 운영하는 핵심적인 역할**을 수행합니다.  
 
 > kubelet은 kubernetes를 통해 생성된 container만 관리합니다.  
+> container의 label / tag를 이용하여, cluster에 있는 container인지 구분합니다.  
 > (해당 머신에 접속하면, kubelet과 공유하는 Container runtime을 통해 다른 container를 실행할 수 있습니다)
 {: .prompt-info }
 
