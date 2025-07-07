@@ -25,6 +25,8 @@ HTTPS는
 ## HTTPS(over TLS) 작동 원리
 
 HTTPS는 'Handshake'과정을 통해 작동되며, 크게 2가지 방식의 암호화 방식을 각 목적에 따라 다르게 사용합니다.  
+- 'Handshake 과정': 비대칭키(Asymmetric encryption, 공개키) 암호화 방식을 사용하여, '데이터 교환'과정에서 사용할 대칭 Key를 만들어냅니다.
+- '데이터 교환 과정': 대칭키(Symmetric encryption) 암호화 방식
 
 > 여기서는 범용적으로 사용되는 TLS기반으로 알아봅니다. 세부사항에는 차이가 있지만, Flow는 TLS와 SSL 모두 비슷합니다.
 {: .prompt-info }
@@ -138,6 +140,8 @@ TLS 1.3부터, 데이터 교환시에는 AEAD(Authenticated Encryption with Asso
 - 무결성 확보  
   발급자(CA, Certification Authority)의 디지털 서명으로 인증서 위·변조 가능성을 방지합니다.
 
+  
+#### X.509 예시 및 주요 필드
 
 ```text
 Certificate:
@@ -187,8 +191,6 @@ Certificate:
       8b:c3:ed:d1:9d:39:6f:af:40:72:bd:1e:18:5e:30:54:23:35:
       ...
 ```
-
-#### 주요 필드
 
 1. 버전(Version)  
    X.509v1, v2, v3 중 대개 'v3'를 사용
