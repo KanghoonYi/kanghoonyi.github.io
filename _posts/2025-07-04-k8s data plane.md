@@ -372,6 +372,135 @@ kubelet에서는 `--cgroup-driver` 를 통해, cgroup으로 사용할 드라이�
 - cgroupfs
 - systemd
 
+## 실습
+### Data Plane의 Node 조회
+
+#### Cluster의 노드 목록 조회
+```shell
+$ ~ kubectl get nodes
+NAME                                              STATUS   ROLES    AGE     VERSION
+ip-10-20-99-219.ap-northeast-2.compute.internal   Ready    <none>   8m58s   v1.32.1-eks-5d632ec
+```
+#### 개별 Node의 세부 사항 조회
+```shell
+$ kubectl describe nodes ip-10-20-99-219.ap-northeast-2.compute.internal
+Name:               ip-10-20-99-219.ap-northeast-2.compute.internal
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=t3.large
+                    beta.kubernetes.io/os=linux
+                    ...
+Annotations:        alpha.kubernetes.io/provided-node-ip: 10.20.99.219
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 10 Jul 2025 17:27:37 +0900
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-20-99-219.ap-northeast-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Thu, 10 Jul 2025 17:38:31 +0900
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Thu, 10 Jul 2025 17:34:34 +0900   Thu, 10 Jul 2025 17:27:33 +0900   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Thu, 10 Jul 2025 17:34:34 +0900   Thu, 10 Jul 2025 17:27:33 +0900   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Thu, 10 Jul 2025 17:34:34 +0900   Thu, 10 Jul 2025 17:27:33 +0900   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Thu, 10 Jul 2025 17:34:34 +0900   Thu, 10 Jul 2025 17:27:56 +0900   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.20.99.219
+  InternalDNS:  ip-10-20-99-219.ap-northeast-2.compute.internal
+  Hostname:     ip-10-20-99-219.ap-northeast-2.compute.internal
+Capacity:
+  cpu:                2
+  ephemeral-storage:  31379436Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             7999148Ki
+  pods:               35
+Allocatable:
+  cpu:                1930m
+  ephemeral-storage:  27845546346
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             7241388Ki
+  pods:               35
+System Info:
+  Machine ID:                 ...
+  System UUID:                ...
+  Boot ID:                    ...
+  Kernel Version:             6.1.127-135.201.amzn2023.x86_64
+  OS Image:                   Amazon Linux 2023.6.20250203
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.7.25
+  Kubelet Version:            v1.32.1-eks-5d632ec
+  Kube-Proxy Version:         v1.32.1-eks-5d632ec
+ProviderID:                   aws:///ap-northeast-2c/i-0288f536d015d5e34
+Non-terminated Pods:          (4 in total)
+  Namespace                   Name                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                        ------------  ----------  ---------------  -------------  ---
+  kube-system                 aws-node-496nj              50m (2%)      0 (0%)      0 (0%)           0 (0%)         9m23s
+  kube-system                 coredns-586c6dd46b-5s5cc    100m (5%)     0 (0%)      70Mi (0%)        170Mi (2%)     9m36s
+  kube-system                 coredns-586c6dd46b-vsdfd    100m (5%)     0 (0%)      70Mi (0%)        170Mi (2%)     9m36s
+  kube-system                 kube-proxy-nc5tm            100m (5%)     0 (0%)      0 (0%)           0 (0%)         10m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                350m (18%)  0 (0%)
+  memory             140Mi (1%)  340Mi (4%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-1Gi      0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type     Reason                   Age                From                   Message
+  ----     ------                   ----               ----                   -------
+  Normal   Starting                 10m                kube-proxy
+  Normal   Starting                 10m                kubelet                Starting kubelet.
+  Warning  InvalidDiskCapacity      10m                kubelet                invalid capacity 0 on image filesystem
+  Normal   NodeHasSufficientMemory  10m (x2 over 10m)  kubelet                Node ip-10-20-99-219.ap-northeast-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    10m (x2 over 10m)  kubelet                Node ip-10-20-99-219.ap-northeast-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     10m (x2 over 10m)  kubelet                Node ip-10-20-99-219.ap-northeast-2.compute.internal status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  10m                kubelet                Updated Node Allocatable limit across pods
+  Normal   Synced                   10m                cloud-node-controller  Node synced successfully
+  Normal   RegisteredNode           10m                node-controller        Node ip-10-20-99-219.ap-northeast-2.compute.internal event: Registered Node ip-10-20-99-219.ap-northeast-2.compute.internal in Controller
+  Normal   NodeReady                10m                kubelet                Node ip-10-20-99-219.ap-northeast-2.compute.internal status is now: NodeReady
+```
+
+### Node의 System Component 조회
+
+#### Node의 System Component 조회
+```shell
+$ kubectl get pods --namespace=kube-system --field-selector spec.nodeName=ip-10-20-99-219.ap-northeast-2.compute.internal
+NAME                       READY   STATUS    RESTARTS   AGE
+aws-node-496nj             2/2     Running   0          17m ## Amazon VPC CNI 플러그인
+coredns-586c6dd46b-5s5cc   1/1     Running   0          17m
+coredns-586c6dd46b-vsdfd   1/1     Running   0          17m
+kube-proxy-nc5tm           1/1     Running   0          18m
+```
+
+#### kube-proxy 조회
+```shell
+$ kubectl get daemonSets --namespace=kube-system kube-proxy
+NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+kube-proxy   1         1         1       1            1           <none>          18m
+```
+
+#### Cluster의 DNS Deployments 조회
+```shell
+$ kubectl get deployments --namespace=kube-system coredns
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+coredns   2/2     2            2           25m
+```
+
+#### DNS에 대한 Service조회
+```shell
+$ kubectl get services --namespace=kube-system kube-dns
+NAME       TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                  AGE
+kube-dns   ClusterIP   172.20.0.10   <none>        53/UDP,53/TCP,9153/TCP   28m
+```
+
 ## References
 
 Nodes | kubernetes.io
