@@ -380,6 +380,35 @@ kube-controller-manager가
 kube-scheduler는
 : "어디에" 배치할지(어떤 노드에 놓을지) 결정하여 Binding을 수행합니다.
 
+## 실습
+> AWS EKS환경에서 Control Plane은 고객이 직접 접근할 수 없는 완전 관리형(Managed) 서비스로 운영됩니다.
+> 때문에, kubectl로 직접 Control Plane을 접속하진 못하고, AWS CLI도구를 통해 Cluster의 상태를 조회합니다.
+{: .prompt-info }
+
+### kubectl와 Cluster 연결
+kubectl은 한번에 하나의 Cluster를 연결하여 명령어를 실행합니다.  
+이때, 'Context'라는 개념으로 Cluster와의 연결을 생성합니다.
+
+#### kubectl과 EKS Cluster 연결
+[AWS CLI 명령어](https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/create-kubeconfig.html#create-kubeconfig-automatically)를 통해, EKS Cluster에 대한 Context를 쉽게 생성할 수 있습니다. 
+```shell
+$ AWS_PROFILE=**** aws eks update-kubeconfig --region ap-northeast-2 --name workshopdapne2-yeov
+Added new context arn:aws:eks:ap-northeast-2:0000000:cluster/workshopdapne2-yeov to /Users/****/.kube/config
+```
+
+#### Local환경에 있는 Cluster목록(Context) 조회
+```shell
+$ kubectl ctx
+arn:aws:eks:ap-northeast-2:0000000:cluster/workshopdapne2-yeov
+```
+
+
+### Cluster 상태 조회
+```shell
+$ AWS_PROFILE=**** aws eks describe-cluster --name workshopdapne2-yeov --query "cluster.status"
+"ACTIVE"
+```
+
 ## References
 
 Componentes | kubernetes.io
