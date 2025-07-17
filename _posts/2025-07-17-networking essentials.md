@@ -3,7 +3,7 @@ title: Networking Essentials | Core Concepts - System Design Interview
 author: KanghoonYi
 date: 2025-07-17 15:20:00 +0900
 categories: [System Design Interview]
-tags: [network, system design, alb, tcp, udp, ois, basic]
+tags: [networking, system design, alb, tcp, udp, ois, http, https, restapi, Computer Science]
 pin: false
 math: false
 image:
