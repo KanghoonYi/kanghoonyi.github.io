@@ -635,6 +635,27 @@ _REST방식과 gRPC방식의 차이 \| from [https://refine.dev/blog/grpc-vs-res
 
 gRPC는 REST와 달리 함수를 호출하듯 인터페이스를 설계·사용합니다.
 
+##### HTTP를 기반으로하는 REST와 gRPC비교
+gRPC도 HTTP/2를 기반으로 작동하는 프로토콜이기 때문에, REST와 비교하며, 내부적으로 어떤 HTTP요청을 보내는지 비교하고자 합니다.
+
+- REST Over HTTP  
+  ```http
+  POST /users HTTP/1.1
+  Content-Type: application/json
+
+  {
+    "name": "Alice"
+  }
+  ```
+- gRPC  
+  ```http
+  POST /myapp.UserService/CreateUser HTTP/2
+  Content-Type: application/grpc
+  
+  (binary payload - protobuf encoded)
+  ```
+
+
 #### gRPC의 내장기능. Client-side Load Balancing(CSLB)
 
 ![Client Load Balancing 구조 \| from [grpc.io](https://grpc.io/blog/grpc-load-balancing/)](/assets/img/for-post/Networking%20Essentials/image%2019.png)
@@ -692,21 +713,21 @@ Client에서 'Event Stream'을 생성하기 위한 요청을 보내고, 서버�
 
 2. 서버 응답(스트리밍 시작)  
    서버는 HTTP Response를 끊임없이 유지합니다.  
-    ```text
-    HTTP/1.1 200 OK
-    Content-Type: text/event-stream
-    Cache-Control: no-cache
-    Connection: keep-alive
-    ```
+   ```http
+   HTTP/1.1 200 OK
+   Content-Type: text/event-stream
+   Cache-Control: no-cache
+   Connection: keep-alive
+   ```
    이어서 텍스트 프레임을 차례로 전송합니다.  
-    ```text
-    data: 첫 번째 메시지 내용\n
-    \n
-    data: 두 번째 메시지 내용\n
-    id: 42\n
-    event: customEvent\n
-    \n
-    ```
+   ```text
+   data: 첫 번째 메시지 내용\n
+   \n
+   data: 두 번째 메시지 내용\n
+   id: 42\n
+   event: customEvent\n
+   \n
+   ```
     - data: 한 줄에 메시지 내용을 기록
     - 빈 줄(\n\n)이 하나의 **이벤트 단위(Record)** 를 구분
     - id: 로 이벤트 식별자 지정 → 재연결 시 Last-Event-ID 헤더로 이어받기
@@ -754,23 +775,23 @@ _WebSocket over TCP Sequence diagram \| from [researchgate.net](https://www.rese
 
 1. Client 요청  
    Client에서 TCP연결을 생성하고, HTTP요청을 통해, HTTP연결을 Websocket으로  전환하는 요청을 보냅니다.  
-    ```text
-    GET /chat HTTP/1.1
-    Host: example.com
-    Upgrade: websocket
-    Connection: Upgrade
-    Sec-WebSocket-Key: <base64-encoded nonce>
-    Sec-WebSocket-Version: 13
-    ```  
+   ```http
+   GET /chat HTTP/1.1
+   Host: example.com
+   Upgrade: websocket
+   Connection: Upgrade
+   Sec-WebSocket-Key: <base64-encoded nonce>
+   Sec-WebSocket-Version: 13
+   ```  
 
 2. Server 응답  
    HTTP를 WebSocket으로 전환하는 것을 승인합니다.  
-    ```
-    HTTP/1.1 101 Switching Protocols
-    Upgrade: websocket
-    Connection: Upgrade
-    Sec-WebSocket-Accept: <SHA1&base64 of nonce>
-    ```
+   ```http
+   HTTP/1.1 101 Switching Protocols
+   Upgrade: websocket
+   Connection: Upgrade
+   Sec-WebSocket-Accept: <SHA1&base64 of nonce>
+   ```
 
 
 #### 언제 사용하나요?
