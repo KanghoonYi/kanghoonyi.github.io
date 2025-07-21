@@ -635,6 +635,27 @@ _REST방식과 gRPC방식의 차이 \| from [https://refine.dev/blog/grpc-vs-res
 
 gRPC는 REST와 달리 함수를 호출하듯 인터페이스를 설계·사용합니다.
 
+##### HTTP를 기반으로하는 REST와 gRPC비교
+gRPC도 HTTP/2를 기반으로 작동하는 프로토콜이기 때문에, REST와 비교하며, 내부적으로 어떤 HTTP요청을 보내는지 비교하고자 합니다.
+
+- REST Over HTTP
+  ```http request
+  POST /users HTTP/1.1
+  Content-Type: application/json
+
+  {
+    "name": "Alice"
+  }
+  ```
+- gRPC
+  ```http request
+  POST /myapp.UserService/CreateUser HTTP/2
+  Content-Type: application/grpc
+  
+  (binary payload - protobuf encoded)
+  ```
+
+
 #### gRPC의 내장기능. Client-side Load Balancing(CSLB)
 
 ![Client Load Balancing 구조 \| from [grpc.io](https://grpc.io/blog/grpc-load-balancing/)](/assets/img/for-post/Networking%20Essentials/image%2019.png)
