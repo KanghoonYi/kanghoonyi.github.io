@@ -638,8 +638,8 @@ gRPC는 REST와 달리 함수를 호출하듯 인터페이스를 설계·사용�
 ##### HTTP를 기반으로하는 REST와 gRPC비교
 gRPC도 HTTP/2를 기반으로 작동하는 프로토콜이기 때문에, REST와 비교하며, 내부적으로 어떤 HTTP요청을 보내는지 비교하고자 합니다.
 
-- REST Over HTTP
-  ```http request
+- REST Over HTTP  
+  ```http
   POST /users HTTP/1.1
   Content-Type: application/json
 
@@ -647,8 +647,8 @@ gRPC도 HTTP/2를 기반으로 작동하는 프로토콜이기 때문에, REST�
     "name": "Alice"
   }
   ```
-- gRPC
-  ```http request
+- gRPC  
+  ```http
   POST /myapp.UserService/CreateUser HTTP/2
   Content-Type: application/grpc
   
@@ -775,7 +775,7 @@ _WebSocket over TCP Sequence diagram \| from [researchgate.net](https://www.rese
 
 1. Client 요청  
    Client에서 TCP연결을 생성하고, HTTP요청을 통해, HTTP연결을 Websocket으로  전환하는 요청을 보냅니다.  
-    ```text
+    ```http
     GET /chat HTTP/1.1
     Host: example.com
     Upgrade: websocket
@@ -786,7 +786,7 @@ _WebSocket over TCP Sequence diagram \| from [researchgate.net](https://www.rese
 
 2. Server 응답  
    HTTP를 WebSocket으로 전환하는 것을 승인합니다.  
-    ```
+    ```http
     HTTP/1.1 101 Switching Protocols
     Upgrade: websocket
     Connection: Upgrade
