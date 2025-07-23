@@ -2,7 +2,7 @@
 title: What is CloudNativePG? | CloudNative
 author: KanghoonYi
 date: 2025-07-21 16:50:00 +0900
-categories: [DevOps, kubernetes]
+categories: [DevOps, CloudNative]
 tags: [aws, kubernetes, cncf, k8s, db, postgresql]
 pin: false
 math: false
