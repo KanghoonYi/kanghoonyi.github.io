@@ -208,7 +208,7 @@ Consistency에는 여러 Spectrum이 있으며, 이를 이해하는것은 시스
 | **전체 순서 필요 여부** | 모든 연산 순서를 동일하게 유지합니다. | 인과관계가 있는 연산만 순서 보장합니다. |
 | **병렬 연산 간 순서** | 순서를 **강제로 정합니다.**  | **자유롭게 재배열 가능** (인과관계 없으면) |
 | **성능** | 더 느릴 수 있습니다. | 더 빠르고 병렬성이 높습니다. |
-<br>
+
 
 ### Read-your-own-writes(RYW) Consistency
 
@@ -265,7 +265,7 @@ _Eventual Consistency Pattern들 | from [bytebytego.com](https://bytebytego.com/
 | 구조 | 보상 트랜잭션 정의 필수 | 보상 없음 (대부분 리드모델 갱신) |
 | 사용 목적 | 분산 **비즈니스 트랜잭션 처리** | 시스템 간 **데이터 복제/동기화** |
 | 대표 시나리오 | 결제 실패 시 환불, 롤백 등 | 주문이 생성되면 배송 시스템이 동기화 |
-<br>
+
 
 #### CQRS(Command Query Responsibility Segregation)-based Eventual Consistency
 
