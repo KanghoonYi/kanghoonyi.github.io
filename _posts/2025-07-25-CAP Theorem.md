@@ -231,7 +231,7 @@ DNS사용 되며, 대부분의 Distributed Database에서의 Default 설정입�
 - S3, DNS: 변경 직후에 전파가 늦어질 수 있음
 
 ![Eventual Consistency Pattern들](/assets/img/for-post/CAP%20Theorem/image.png)
-_Eventual Consistency Pattern들 | from [bytebytego.com](https://bytebytego.com/guides/top-eventual-consistency-patterns-you-must-know/)
+_Eventual Consistency Pattern들 | from [bytebytego.com](https://bytebytego.com/guides/top-eventual-consistency-patterns-you-must-know/)_
 
 #### Event-based Eventual Consistency
 
