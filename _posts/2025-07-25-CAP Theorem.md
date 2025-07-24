@@ -7,7 +7,7 @@ tags: [System Design, interview, Computer Science, CAP, SAGA]
 pin: false
 math: false
 image:
-  path: /assets/img/for-post/What%20is%20Kafka/kafka-cover.png
+  path: /assets/img/for-post/CAP%20Theorem/cap-cover.jpg
 ---
 
 ## CAP Theorem 소개
@@ -18,7 +18,7 @@ CAP는 각각 Consistency, Availability, Partition Tolerance를 의미합니다.
 : 'Distributed System(분산처리 시스템)'의 **3가지 핵심 속성에서, 이중 딱 2개만 취할 수 있다**는 theorem(정리, 일정한 조건하에 참이라는 것이 증명됨)입니다.  
 : 즉, **3가지 속성사이의 Trade-off 관계**를 설명하는 이론입니다.
 
-![CAP theorem Euler diagram](/assets/img/for-post/CAP%20Theorem/960px-CAP_Theorem_Venn_Diagram.png)
+![CAP theorem Euler diagram](/assets/img/for-post/CAP%20Theorem/960px-CAP_Theorem_Venn_Diagram.png){: .w-50 }
 _CAP theorem Euler diagram | [en.wikipedia.org](https://en.wikipedia.org/wiki/CAP_theorem)_
 
 각각의 속성은 다음과 같습니다.
@@ -231,7 +231,7 @@ DNS사용 되며, 대부분의 Distributed Database에서의 Default 설정입�
 - S3, DNS: 변경 직후에 전파가 늦어질 수 있음
 
 ![Eventual Consistency Pattern들](/assets/img/for-post/CAP%20Theorem/image.png)
-_Eventual Consistency Pattern들_
+_Eventual Consistency Pattern들 | from [bytebytego.com](https://bytebytego.com/guides/top-eventual-consistency-patterns-you-must-know/)
 
 #### Event-based Eventual Consistency
 
