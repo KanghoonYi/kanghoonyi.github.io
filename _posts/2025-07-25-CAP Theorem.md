@@ -3,7 +3,7 @@ title: CAP Theorem(정리) | System Design Interview
 author: KanghoonYi
 date: 2025-07-25 00:04:00 +0900
 categories: [System Design Interview, Core Concepts]
-tags: [System Design, interview, Computer Science, CAP, SAGA]
+tags: [System Design, interview, Computer Science, CAP Theorem, SAGA Pattern]
 pin: false
 math: false
 image:
