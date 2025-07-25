@@ -1,5 +1,5 @@
 ---
-title: CAP Theorem(정리) | System Design Interview
+title: CAP Theorem(정리) | Core Concepts - System Design Interview
 author: KanghoonYi
 date: 2025-07-25 00:04:00 +0900
 categories: [System Design Interview, Core Concepts]
