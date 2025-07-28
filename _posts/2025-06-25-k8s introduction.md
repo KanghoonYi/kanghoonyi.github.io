@@ -106,7 +106,8 @@ _Kubernetes cluster components. (from [https://kubernetes.io/docs/concepts/archi
   'Control Plane'의 'kube-api-server'의 명령을 받아서, 각 Node에서 실제로 명령을 실행하는 역할을 합니다.
 
 - kube-proxy  
-  Kubernetes로 들어오는 network packet들을 받아서 전달(proxy) 해줍니다.
+  Kubernetes로 들어오는 network packet들을 핸들링합니다.
+  주로, Node내의 Routing정책(iptable을 통해)을 관리하며, 이를 통해 Node내 Packet의 이동을 관장합니다.
 
 
 ### Kubernetes의 핵심 철학, Desired State
